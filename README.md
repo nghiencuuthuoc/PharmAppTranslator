@@ -223,11 +223,10 @@ Suggested release assets:
 
 ---
 
-![2026-03-12 15.11.03.screenshot](./Screenshots/2026-03-12 15.11.03.screenshot.png)
+## Screenshots
 
-![2026-03-12 15.23.57.screenshot](./Screenshots/2026-03-12 15.23.57.screenshot.png)
-
-![2026-03-12 15.31.39.screenshot](./Screenshots/2026-03-12 15.31.39.screenshot.png)
-
-![2026-03-12 16.39.21.screenshot](./Screenshots/2026-03-12 16.39.21.screenshot.png)
+![](./Screenshots/2026-03-12 15.11.03.screenshot.png)
+![](./Screenshots/2026-03-12 15.23.57.screenshot.png)
+![](./Screenshots/2026-03-12 15.31.39.screenshot.png)
+![](./Screenshots/2026-03-12 16.39.21.screenshot.png)
 
