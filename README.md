@@ -223,7 +223,12 @@ Suggested release assets:
 
 ---
 
-## License
+## Screenshots
 
-Add the project license here before public release.
+
+![](./Screenshots/2026-03-12%2015.11.03.screenshot.png)
+
+![](./Screenshots/2026-03-12%2015.23.57.screenshot.png)
+
+![](./Screenshots/2026-03-12%2015.31.39.screenshot.png)
 
