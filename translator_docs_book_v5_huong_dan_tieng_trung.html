@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Hướng dẫn dịch tài liệu tiếng Trung bằng Translator Docs Book v5 GUI</title>
+<style>
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+}
+:root {
+  --ink: #202833;
+  --muted: #5f6b7a;
+  --accent: #1f5f8b;
+  --accent-soft: #eef5fb;
+  --line: #d5dfeb;
+  --code-bg: #f6f8fb;
+}
+html {
+  font-family: "Noto Serif CJK SC", "Noto Sans CJK SC", "DejaVu Serif", serif;
+  color: var(--ink);
+  line-height: 1.58;
+  font-size: 11.2pt;
+}
+body {
+  margin: 0;
+}
+.cover {
+  border: 1.6px solid var(--line);
+  border-radius: 14px;
+  padding: 22mm 16mm 18mm 16mm;
+  background: linear-gradient(180deg, #fbfdff 0%, #f5f9fd 100%);
+  margin-bottom: 12mm;
+}
+.kicker {
+  color: var(--accent);
+  font-family: "Noto Sans CJK SC", "DejaVu Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: .3px;
+  font-size: 10pt;
+  text-transform: uppercase;
+}
+h1 {
+  color: #18344b;
+  font-family: "Noto Sans CJK SC", "DejaVu Sans", sans-serif;
+  font-size: 22pt;
+  line-height: 1.22;
+  margin: 8pt 0 8pt 0;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 11.5pt;
+  margin-top: 6pt;
+}
+.meta {
+  margin-top: 16pt;
+  padding: 10pt 12pt;
+  background: white;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  font-size: 10.6pt;
+}
+main h1 {
+  page-break-before: avoid;
+}
+h2 {
+  font-family: "Noto Sans CJK SC", "DejaVu Sans", sans-serif;
+  color: #1b4f73;
+  font-size: 15.5pt;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4pt;
+  margin: 18pt 0 10pt 0;
+}
+h3 {
+  font-family: "Noto Sans CJK SC", "DejaVu Sans", sans-serif;
+  color: #2b4f6a;
+  font-size: 12.3pt;
+  margin: 14pt 0 6pt 0;
+}
+p {
+  margin: 7pt 0;
+}
+ul, ol {
+  margin: 5pt 0 8pt 18pt;
+}
+li {
+  margin: 2pt 0;
+}
+blockquote {
+  margin: 8pt 0;
+  padding: 8pt 12pt;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10pt 0 14pt 0;
+  font-size: 10.1pt;
+}
+thead th {
+  background: #eaf2f8;
+  color: #123b57;
+  font-family: "Noto Sans CJK SC", "DejaVu Sans", sans-serif;
+  font-weight: 700;
+}
+th, td {
+  border: 1px solid #c8d4e0;
+  padding: 7pt 8pt;
+  vertical-align: middle;
+  text-align: left;
+}
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--code-bg);
+  border: 1px solid #dde5ef;
+  border-radius: 8px;
+  padding: 10pt 12pt;
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 9.6pt;
+  line-height: 1.45;
+  margin: 8pt 0 12pt 0;
+}
+code {
+  font-family: "DejaVu Sans Mono", monospace;
+  background: #f1f5f9;
+  padding: 1pt 3pt;
+  border-radius: 4px;
+  font-size: 92%;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 12pt 0;
+}
+.callout {
+  margin: 10pt 0 14pt 0;
+  padding: 9pt 12pt;
+  background: #fff8e7;
+  border: 1px solid #ead8a4;
+  border-radius: 8px;
+}
+.small {
+  color: var(--muted);
+  font-size: 9.5pt;
+}
+.footer-note {
+  margin-top: 14pt;
+  font-size: 9.4pt;
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+<section class="cover">
+  <div class="kicker">Translator Docs Book v5 GUI</div>
+  <h1>Hướng dẫn dịch tài liệu tiếng Trung bằng Translator Docs Book v5 GUI</h1>
+  <div class="subtitle">Thiết lập OCR, chọn ngôn ngữ nguồn - đích, và cấu hình khuyến nghị cho tài liệu scan, sách, dược điển và tài liệu kỹ thuật</div>
+  <div class="meta">
+    <strong>Phạm vi:</strong> tiếng Trung giản thể, tiếng Trung phồn thể, tài liệu scan có lẫn tiếng Anh,
+    PDF sách, dược điển, tài liệu kỹ thuật và tài liệu văn phòng.
+  </div>
+</section>
+<main>
+<h1>Hướng dẫn dịch tài liệu tiếng Trung bằng Translator Docs Book v5 GUI</h1>
+<p><strong>Mục đích</strong><br />
+Tài liệu này giúp người dùng chọn đúng cấu hình khi dịch tài liệu tiếng Trung trong <strong>Translator Docs Book v5 GUI</strong>, đặc biệt với các file scan, PDF sách, dược điển, brochure kỹ thuật và tài liệu văn phòng có lẫn tiếng Anh.</p>
+<hr />
+<h2>1) Thiết lập tổng quát nên dùng</h2>
+<p>Khi xử lý tài liệu tiếng Trung, cấu hình nền tảng nên bắt đầu như sau:</p>
+<ul>
+<li><strong>OCR Mode</strong> = <code>all</code></li>
+<li><strong>OCR Lang</strong> = chọn theo loại chữ Trung:<ul>
+<li><code>chi_sim+eng</code> cho <strong>giản thể</strong></li>
+<li><code>chi_tra+eng</code> cho <strong>phồn thể</strong></li>
+</ul>
+</li>
+<li><strong>Source Lang</strong> = chọn theo loại văn bản:<ul>
+<li><code>zh-CN</code> cho <strong>Trung Quốc đại lục / giản thể</strong></li>
+<li><code>zh-TW</code> cho <strong>Đài Loan / phồn thể</strong></li>
+</ul>
+</li>
+<li><strong>Target Lang</strong> = ngôn ngữ đích:<ul>
+<li><code>vi</code> để dịch sang <strong>tiếng Việt</strong></li>
+<li><code>en</code> để dịch sang <strong>tiếng Anh</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>Khuyến nghị thực tế:</strong><br />
+Với tài liệu scan hoặc PDF ảnh, nên để <strong>OCR Mode = all</strong> để hệ thống xử lý đầy đủ hơn các trang có chữ nằm trong ảnh, ảnh chụp, bản scan cũ hoặc PDF không có text layer sạch.</p>
+<hr />
+<h2>2) Phân biệt nhanh: giản thể hay phồn thể</h2>
+<h3>Giản thể</h3>
+<p>Thường gặp ở tài liệu từ <strong>Trung Quốc đại lục</strong>.<br />
+Ví dụ các chữ:</p>
+<ul>
+<li>中国药典</li>
+<li>浓缩粉</li>
+<li>制法</li>
+<li>检查</li>
+</ul>
+<p><strong>Thiết lập phù hợp:</strong></p>
+<ul>
+<li><strong>OCR Lang</strong> = <code>chi_sim+eng</code></li>
+<li><strong>Source Lang</strong> = <code>zh-CN</code></li>
+</ul>
+<h3>Phồn thể</h3>
+<p>Thường gặp ở tài liệu từ <strong>Đài Loan</strong>, <strong>Hong Kong</strong>, hoặc một số tài liệu cũ.<br />
+Ví dụ các chữ:</p>
+<ul>
+<li>中國藥典</li>
+<li>濃縮粉</li>
+<li>製法</li>
+<li>檢查</li>
+</ul>
+<p><strong>Thiết lập phù hợp:</strong></p>
+<ul>
+<li><strong>OCR Lang</strong> = <code>chi_tra+eng</code></li>
+<li><strong>Source Lang</strong> = <code>zh-TW</code></li>
+</ul>
+<hr />
+<h2>3) Bảng cấu hình khuyến nghị</h2>
+<table>
+<thead>
+<tr>
+  <th>Loại tài liệu</th>
+  <th>OCR Mode</th>
+  <th>OCR Lang</th>
+  <th>Source Lang</th>
+  <th>Target Lang</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Tài liệu tiếng Trung giản thể dịch sang tiếng Việt</td>
+  <td><code>all</code></td>
+  <td><code>chi_sim+eng</code></td>
+  <td><code>zh-CN</code></td>
+  <td><code>vi</code></td>
+</tr>
+<tr>
+  <td>Tài liệu tiếng Trung giản thể dịch sang tiếng Anh</td>
+  <td><code>all</code></td>
+  <td><code>chi_sim+eng</code></td>
+  <td><code>zh-CN</code></td>
+  <td><code>en</code></td>
+</tr>
+<tr>
+  <td>Tài liệu tiếng Trung phồn thể dịch sang tiếng Việt</td>
+  <td><code>all</code></td>
+  <td><code>chi_tra+eng</code></td>
+  <td><code>zh-TW</code></td>
+  <td><code>vi</code></td>
+</tr>
+<tr>
+  <td>Tài liệu tiếng Trung phồn thể dịch sang tiếng Anh</td>
+  <td><code>all</code></td>
+  <td><code>chi_tra+eng</code></td>
+  <td><code>zh-TW</code></td>
+  <td><code>en</code></td>
+</tr>
+<tr>
+  <td>Tài liệu có tiếng Trung lẫn tiếng Anh chuyên ngành</td>
+  <td><code>all</code></td>
+  <td><code>chi_sim+eng</code> hoặc <code>chi_tra+eng</code></td>
+  <td><code>zh-CN</code> hoặc <code>zh-TW</code></td>
+  <td><code>vi</code> / <code>en</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lưu ý quan trọng:</strong><br />
+Không nên ghép lệch cặp, ví dụ:</p>
+<ul>
+<li><code>chi_sim+eng</code> nhưng lại chọn <code>zh-TW</code></li>
+<li><code>chi_tra+eng</code> nhưng lại chọn <code>zh-CN</code></li>
+</ul>
+<p>Phần mềm vẫn có thể chạy, nhưng chất lượng OCR và chất lượng dịch thường kém ổn định hơn, dễ sai thuật ngữ, sai phân đoạn câu hoặc nhận dạng nhầm ký tự.</p>
+<hr />
+<h2>4) Cấu hình nên dùng theo từng mục tiêu</h2>
+<h3>A. Dịch tài liệu tiếng Trung sang tiếng Việt</h3>
+<p>Dùng khi muốn tạo bản đọc nội bộ, bản tham khảo, tài liệu học thuật hoặc tài liệu kỹ thuật cho người đọc Việt Nam.</p>
+<p><strong>Giản thể sang tiếng Việt</strong></p>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_sim+eng
+Source Lang = zh-CN
+Target Lang = vi
+</code></pre>
+<p><strong>Phồn thể sang tiếng Việt</strong></p>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_tra+eng
+Source Lang = zh-TW
+Target Lang = vi
+</code></pre>
+<h3>B. Dịch tài liệu tiếng Trung sang tiếng Anh</h3>
+<p>Phù hợp khi muốn chuẩn hóa nội dung để trao đổi quốc tế, đọc nhanh tài liệu chuyên ngành hoặc làm bước trung gian trước khi biên tập.</p>
+<p><strong>Giản thể sang tiếng Anh</strong></p>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_sim+eng
+Source Lang = zh-CN
+Target Lang = en
+</code></pre>
+<p><strong>Phồn thể sang tiếng Anh</strong></p>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_tra+eng
+Source Lang = zh-TW
+Target Lang = en
+</code></pre>
+<hr />
+<h2>5) Quy trình thao tác gợi ý trong GUI</h2>
+<h3>Bước 1. Chọn file nguồn</h3>
+<p>Chọn PDF, ảnh scan, tài liệu office, EPUB hoặc các định dạng được chương trình hỗ trợ.</p>
+<h3>Bước 2. Kiểm tra loại chữ Trung</h3>
+<p>Quan sát nhanh vài chữ trên trang đầu:</p>
+<ul>
+<li>Nếu thấy dạng <strong>中国 / 药 / 浓 / 体</strong> -&gt; thường là <strong>giản thể</strong></li>
+<li>Nếu thấy dạng <strong>中國 / 藥 / 濃 / 體</strong> -&gt; thường là <strong>phồn thể</strong></li>
+</ul>
+<h3>Bước 3. Đặt OCR Mode</h3>
+<p>Chọn:</p>
+<pre><code class="language-text">OCR Mode = all
+</code></pre>
+<p>Thiết lập này phù hợp cho phần lớn tài liệu scan, sách, dược điển, tài liệu PDF ảnh hoặc file có text layer không sạch.</p>
+<h3>Bước 4. Chọn OCR Lang</h3>
+<ul>
+<li>Tài liệu giản thể: <code>chi_sim+eng</code></li>
+<li>Tài liệu phồn thể: <code>chi_tra+eng</code></li>
+</ul>
+<h3>Bước 5. Chọn Source Lang</h3>
+<ul>
+<li>Giản thể: <code>zh-CN</code></li>
+<li>Phồn thể: <code>zh-TW</code></li>
+</ul>
+<h3>Bước 6. Chọn Target Lang</h3>
+<ul>
+<li><code>vi</code> nếu muốn đọc và sử dụng bằng tiếng Việt</li>
+<li><code>en</code> nếu muốn tạo bản tiếng Anh</li>
+</ul>
+<h3>Bước 7. Chạy thử vài trang trước</h3>
+<p>Nếu tài liệu dài, nên chạy thử một phần nhỏ trước để đánh giá:</p>
+<ul>
+<li>chất lượng OCR</li>
+<li>thuật ngữ chuyên ngành</li>
+<li>cách xuống dòng</li>
+<li>độ sạch của bản dịch</li>
+</ul>
+<p>Sau khi thấy ổn mới chạy toàn bộ tài liệu.</p>
+<hr />
+<h2>6) Khi nào nên để OCR Mode = all</h2>
+<p>Nên dùng <strong>OCR Mode = all</strong> trong các trường hợp sau:</p>
+<ul>
+<li>PDF là bản scan thật, không phải PDF text</li>
+<li>chữ nằm trong ảnh</li>
+<li>tài liệu cũ, mờ, nghiêng, lệch hoặc có nền không sạch</li>
+<li>sách scan nhiều cột</li>
+<li>dược điển, chuyên luận, sách có bảng, công thức, tiếng Anh xen tiếng Trung</li>
+<li>file office hoặc PDF sau chuyển đổi nhưng text layer bị lỗi</li>
+</ul>
+<p><strong>Ưu điểm của chế độ này:</strong></p>
+<ul>
+<li>giảm nguy cơ bỏ sót vùng chữ</li>
+<li>phù hợp với tài liệu hỗn hợp ảnh + text</li>
+<li>hữu ích với tài liệu chuyên ngành có tiếng Anh đi kèm</li>
+</ul>
+<hr />
+<h2>7) Ví dụ thực tế: trang Dược điển Trung Quốc</h2>
+<p>Với trang như:</p>
+<ul>
+<li><strong>中国药典 2025 年版</strong></li>
+<li>có nội dung chuyên luận dược liệu</li>
+<li>có lẫn tiếng Anh như <strong>POWDERED BUFFALO HORN EXTRACT</strong></li>
+<li>bố cục dạng sách scan</li>
+</ul>
+<p>Thiết lập khuyến nghị là:</p>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_sim+eng
+Source Lang = zh-CN
+Target Lang = vi
+</code></pre>
+<p>Hoặc nếu cần bản tiếng Anh:</p>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_sim+eng
+Source Lang = zh-CN
+Target Lang = en
+</code></pre>
+<p>Đây là cấu hình phù hợp vì:</p>
+<ul>
+<li>trang dùng <strong>chữ Trung giản thể</strong></li>
+<li>có <strong>tiếng Anh đi kèm</strong></li>
+<li>tài liệu có đặc điểm của <strong>bản scan sách chuyên ngành</strong></li>
+</ul>
+<hr />
+<h2>8) Mẹo để OCR và dịch sạch hơn</h2>
+<h3>Ưu tiên file nguồn rõ nét</h3>
+<ul>
+<li>scan thẳng trang</li>
+<li>tránh nền xám đậm</li>
+<li>hạn chế bóng, nghiêng, méo</li>
+<li>độ phân giải đủ cao</li>
+</ul>
+<h3>Với tài liệu có tiếng Anh xen tiếng Trung</h3>
+<p>Nên giữ phần <code>+eng</code> trong OCR Lang:</p>
+<ul>
+<li><code>chi_sim+eng</code></li>
+<li><code>chi_tra+eng</code></li>
+</ul>
+<p>Điều này giúp phần mềm nhận dạng tốt hơn:</p>
+<ul>
+<li>tên hoạt chất</li>
+<li>tên Latin</li>
+<li>tiêu đề tiếng Anh</li>
+<li>từ viết tắt chuyên ngành</li>
+<li>thông số kỹ thuật</li>
+</ul>
+<h3>Chạy thử trước khi chạy toàn bộ</h3>
+<p>Đặc biệt với:</p>
+<ul>
+<li>sách dày</li>
+<li>dược điển</li>
+<li>tiêu chuẩn</li>
+<li>brochure nhiều cột</li>
+<li>tài liệu có bảng</li>
+</ul>
+<h3>Kiểm tra vài điểm sau khi dịch</h3>
+<ul>
+<li>tên dược liệu</li>
+<li>tên hóa học</li>
+<li>hàm lượng, đơn vị</li>
+<li>số mục, số bảng</li>
+<li>tiêu đề và tên Latin</li>
+<li>các đoạn có trộn Trung - Anh</li>
+</ul>
+<hr />
+<h2>9) Lỗi thường gặp và cách xử lý</h2>
+<h3>Lỗi 1. Chữ OCR ra sai nhiều</h3>
+<p><strong>Nguyên nhân thường gặp:</strong></p>
+<ul>
+<li>chọn sai <code>chi_sim</code> / <code>chi_tra</code></li>
+<li>file scan mờ</li>
+<li>trang lệch hoặc quá nhỏ</li>
+<li>ảnh có nền xấu</li>
+</ul>
+<p><strong>Cách xử lý:</strong></p>
+<ul>
+<li>kiểm tra lại giản thể hay phồn thể</li>
+<li>ưu tiên <code>OCR Mode = all</code></li>
+<li>dùng file scan rõ hơn nếu có</li>
+</ul>
+<h3>Lỗi 2. Dịch đúng ít, sai nhiều ở thuật ngữ</h3>
+<p><strong>Nguyên nhân thường gặp:</strong></p>
+<ul>
+<li>OCR đầu vào chưa sạch</li>
+<li>tài liệu quá nhiều thuật ngữ chuyên ngành</li>
+<li>nhầm Source Lang</li>
+</ul>
+<p><strong>Cách xử lý:</strong></p>
+<ul>
+<li>sửa lại cặp <code>OCR Lang</code> và <code>Source Lang</code></li>
+<li>chạy thử vài trang trước</li>
+<li>ưu tiên xuất ra <code>en</code> nếu cần bản trung gian dễ hậu kiểm hơn</li>
+</ul>
+<h3>Lỗi 3. Bản dịch bị lẫn tiếng Anh hoặc bỏ sót tiêu đề tiếng Anh</h3>
+<p><strong>Cách xử lý:</strong></p>
+<ul>
+<li>giữ <code>+eng</code> trong OCR Lang</li>
+<li>không chỉ dùng <code>chi_sim</code> hoặc <code>chi_tra</code> đơn lẻ nếu tài liệu có tiếng Anh xen kẽ</li>
+</ul>
+<h3>Lỗi 4. Dùng đúng OCR Lang nhưng vẫn sai nhiều</h3>
+<p><strong>Khả năng cao do chất lượng scan</strong>, không phải do lựa chọn ngôn ngữ.<br />
+Khi đó cần ưu tiên cải thiện ảnh đầu vào hoặc xử lý lại file scan.</p>
+<hr />
+<h2>10) Cấu hình khuyên dùng để nhớ nhanh</h2>
+<h3>Trường hợp phổ biến nhất: tài liệu Trung Quốc đại lục</h3>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_sim+eng
+Source Lang = zh-CN
+Target Lang = vi
+</code></pre>
+<h3>Khi muốn bản tiếng Anh</h3>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_sim+eng
+Source Lang = zh-CN
+Target Lang = en
+</code></pre>
+<h3>Khi tài liệu là phồn thể</h3>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_tra+eng
+Source Lang = zh-TW
+Target Lang = vi hoặc en
+</code></pre>
+<hr />
+<h2>11) Kết luận</h2>
+<p>Đối với <strong>Translator Docs Book v5 GUI</strong>, khi dịch tài liệu tiếng Trung, cách chọn đúng nhất là:</p>
+<ul>
+<li>xác định trước tài liệu là <strong>giản thể</strong> hay <strong>phồn thể</strong></li>
+<li>đặt <strong>OCR Mode = all</strong> cho tài liệu scan hoặc PDF ảnh</li>
+<li>ghép đúng cặp:<ul>
+<li><code>chi_sim+eng</code> với <code>zh-CN</code></li>
+<li><code>chi_tra+eng</code> với <code>zh-TW</code></li>
+</ul>
+</li>
+<li>chọn <code>vi</code> hoặc <code>en</code> theo nhu cầu đầu ra</li>
+</ul>
+<p>Nếu gặp trang giống <strong>中国药典 2025 年版</strong>, nên coi đó là <strong>giản thể</strong>, và dùng:</p>
+<pre><code class="language-text">OCR Mode    = all
+OCR Lang    = chi_sim+eng
+Source Lang = zh-CN
+Target Lang = vi hoặc en
+</code></pre>
+<p>Cấu hình đúng ngay từ đầu sẽ giúp OCR sạch hơn, dịch ổn định hơn và giảm đáng kể thời gian hậu kiểm.</p>
+
+<div class="footer-note">Tài liệu hướng dẫn tổng hợp - dùng để tham khảo nhanh khi chọn OCR Mode, OCR Lang, Source Lang và Target Lang cho tiếng Trung.</div>
+</main>
+</body>
+</html>

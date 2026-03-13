@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hướng dẫn sử dụng bộ công cụ dịch tài liệu tiếng Nhật</title>
+<style>
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.65;
+    margin: 0;
+    background: #f6f3ec;
+    color: #2b2b2b;
+}
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    background: #fffdfa;
+    padding: 44px 56px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+h1 {
+    color: #123c4a;
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+.subtitle {
+    color: #6c5d47;
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+h2 {
+    color: #0f5a5c;
+    margin-top: 28px;
+    font-size: 24px;
+    border-bottom: 1px solid #e4dccf;
+    padding-bottom: 6px;
+}
+p {
+    margin: 10px 0;
+}
+ul {
+    margin: 10px 0 16px 22px;
+}
+li {
+    margin: 6px 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 14px;
+}
+th, td {
+    border: 1px solid #d8cdbb;
+    padding: 10px 12px;
+    vertical-align: top;
+}
+th {
+    background: #e8f0ef;
+    color: #123c4a;
+    text-align: left;
+}
+.codebox {
+    background: #f7f4ee;
+    border: 1px solid #ddd2c0;
+    border-radius: 6px;
+    padding: 14px 16px;
+    white-space: pre-wrap;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+}
+.note {
+    background: #fff6dc;
+    border-left: 4px solid #d89d22;
+    padding: 12px 14px;
+    margin: 18px 0 24px;
+}
+.footer {
+    margin-top: 36px;
+    font-size: 13px;
+    color: #6e6e6e;
+    border-top: 1px solid #e7dfd2;
+    padding-top: 16px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Hướng dẫn sử dụng bộ công cụ dịch tài liệu tiếng Nhật</h1>
+<div class="subtitle">Dành cho Dược điển Nhật, SmPC, PIL và tài liệu chuyên ngành bằng Translator Docs Book v5 GUI và Translation Package Viewer v7</div>
+<p>Bài viết này hướng dẫn cách sử dụng thực tế cho khách hàng khi làm việc với tài liệu tiếng Nhật, đặc biệt là <strong>Dược điển Nhật</strong>, <strong>SmPC</strong>, <strong>PIL</strong> và các tài liệu kỹ thuật chuyên ngành. Nội dung tập trung vào cách dùng file <code>.exe</code>, cách đặt các ứng dụng hỗ trợ, cách chọn cấu hình OCR phù hợp và cách kiểm tra lại bản dịch bằng Viewer.</p>
+<div class="note"><strong>Gợi ý nhanh:</strong> với tài liệu scan tiếng Nhật, ưu tiên OCR Lang = <code>jpn+eng</code>. Với tài liệu có text sẵn, ưu tiên đọc text trực tiếp để tăng tốc độ và giảm lỗi.</div>
+
+<h2>1. Bộ công cụ này dùng để làm gì?</h2>
+<ul>
+<li>Bộ công cụ gồm hai ứng dụng chạy bằng file .exe.</li>
+<li>Translator Docs Book v5 GUI dùng để quét file hoặc thư mục, trích xuất nội dung, OCR khi cần, dịch theo lô và tạo gói kết quả hoàn chỉnh.</li>
+<li>Translation Package Viewer v7 dùng để mở lại gói kết quả đã dịch, đọc song ngữ, tìm kiếm, rà lỗi QA và kiểm tra chất lượng trước khi bàn giao hoặc lưu trữ.</li>
+</ul>
+<h2>2. Tài liệu tiếng Nhật nào phù hợp nhất?</h2>
+<ul>
+<li>Dược điển Nhật hoặc trích đoạn chuyên khảo từ Japanese Pharmacopoeia.</li>
+<li>SmPC tiếng Nhật, hồ sơ thông tin thuốc, tờ hướng dẫn sử dụng kiểu PIL.</li>
+<li>PDF scan từ tài liệu in giấy, file PDF có text sẵn, DOCX, HTML, EPUB và các tài liệu kỹ thuật Nhật – Anh hoặc Nhật – Việt.</li>
+<li>Tài liệu có xen tiếng Anh, số liệu, tiêu đề kỹ thuật hoặc bảng biểu.</li>
+</ul>
+<h2>3. Cách đặt các Apps hỗ trợ khi chạy từ file exe</h2>
+<ul>
+<li>Để người dùng cuối chạy ổn định, nên để hai file exe trong một thư mục riêng và đặt bộ OCR Tesseract trong thư mục Apps ở cấp cha hoặc gần thư mục chạy.</li>
+<li>Cách bố trí gợi ý:</li>
+</ul>
+<div class="codebox">MyTranslatorSuite/
+├─ Run/
+│  ├─ translator_docs_book_v5_gui.exe
+│  └─ translator_docs_book_viewer_v7_gui.exe
+└─ Apps/
+   └─ Tesseract5.5.0/
+      ├─ tesseract.exe
+      └─ tessdata/</div>
+<ul>
+<li>Với ebook như AZW hoặc MOBI, nên cài Calibre trên máy. Với các định dạng Office cũ như DOC, XLS, PPT, nên cài LibreOffice để phần mềm tự chuyển đổi trước khi dịch.</li>
+<li>Nếu chỉ dùng Viewer để đọc lại kết quả đã dịch, thường không cần cài Tesseract, Calibre hoặc LibreOffice.</li>
+</ul>
+<h2>4. Chọn cấu hình đúng cho tài liệu tiếng Nhật</h2>
+<ul>
+<li>Điều quan trọng nhất là xác định tài liệu thuộc loại scan hay không scan.</li>
+<li>Nếu là PDF scan hoặc chất lượng text rất kém, nên dùng OCR.</li>
+<li>Nếu là PDF có text sẵn hoặc DOCX/HTML/EPUB, nên ưu tiên đọc text trực tiếp để nhanh hơn và ít lỗi hơn.</li>
+</ul>
+<h2>5. Cấu hình khuyến nghị</h2>
+<p>Các cấu hình dưới đây phù hợp cho phần lớn dược điển Nhật, SmPC/PIL tiếng Nhật và tài liệu khoa học có xen tiếng Anh.</p>
+<table>
+<tr><th>Loại tài liệu</th><th>Source Lang</th><th>Target Lang</th><th>OCR Mode</th><th>OCR Lang</th><th>Khuyến nghị</th></tr>
+<tr><td>Dược điển Nhật dạng scan</td><td>ja hoặc auto</td><td>vi hoặc en</td><td>all</td><td>jpn+eng</td><td>Ưu tiên OCR toàn phần để nhận lại chữ từ ảnh.</td></tr>
+<tr><td>SmPC/PIL Nhật dạng scan</td><td>ja hoặc auto</td><td>vi hoặc en</td><td>all</td><td>jpn+eng</td><td>Phù hợp với PDF scan, photocopy, bản in cũ.</td></tr>
+<tr><td>PDF tiếng Nhật có text sẵn</td><td>ja</td><td>vi hoặc en</td><td>off hoặc auto</td><td>jpn+eng</td><td>Nhanh hơn, ít lỗi hơn OCR toàn phần.</td></tr>
+<tr><td>Thư mục nhiều file hỗn hợp</td><td>auto</td><td>vi hoặc en</td><td>auto</td><td>jpn+eng</td><td>Phù hợp khi chưa chắc tất cả đều là tiếng Nhật.</td></tr>
+<tr><td>Tài liệu kỹ thuật cần rà soát thuật ngữ</td><td>ja</td><td>en</td><td>auto</td><td>jpn+eng</td><td>Tạo bản tiếng Anh trung gian để kiểm tra dễ hơn.</td></tr>
+</table>
+<h2>6. Quy trình dịch bằng Translator Docs Book v5 GUI</h2>
+<ul>
+<li>Bước 1: Mở app và chọn UI Language, Appearance, Profile nếu cần.</li>
+<li>Bước 2: Chọn Input Path là file nguồn hoặc thư mục chứa nhiều tài liệu.</li>
+<li>Bước 3: Chọn Output Path là nơi lưu kết quả.</li>
+<li>Bước 4: Có thể dùng Add Files để thêm vài file riêng lẻ hoặc Add Folder để quét cả thư mục.</li>
+<li>Bước 5: Thiết lập Translator, Source Lang, Target Lang, OCR Mode, OCR Lang, số lần thử lại, thời gian chờ và kích thước chunk.</li>
+<li>Bước 6: Bấm Start để bắt đầu. Tab Log sẽ hiển thị tiến độ từng tài liệu và từng segment.</li>
+<li>Bước 7: Khi hoàn tất, dùng Open Output để mở thư mục kết quả.</li>
+</ul>
+<h2>7. Khi nào nên dùng Source Lang = auto, và khi nào nên chọn ja?</h2>
+<ul>
+<li>Nên dùng auto khi thư mục có nhiều tài liệu hỗn hợp hoặc bạn không chắc tất cả đều là tiếng Nhật.</li>
+<li>Nên chọn ja khi bạn chắc chắn tài liệu gốc là tiếng Nhật. Cách này thường giúp workflow rõ ràng hơn khi rà soát bản dịch.</li>
+<li>Target Lang nên chọn vi nếu mục tiêu là đọc hiểu nội bộ tại Việt Nam, hoặc en nếu mục tiêu là bản kỹ thuật trung gian để kiểm tra thuật ngữ.</li>
+</ul>
+<h2>8. Kết quả sau khi dịch gồm những gì?</h2>
+<ul>
+<li>Mỗi tài liệu sẽ được lưu trong một thư mục riêng.</li>
+<li>Thông thường gói kết quả có các thư mục như 01_source, 02_extracted, 03_translation, 04_indexes, 08_logs và 09_reports.</li>
+<li>Các file hữu ích nhất cho người dùng cuối là bilingual.md, target_only.md, full_target.txt, translation_bundle.json, manifest.json và translation_report.json.</li>
+</ul>
+<h2>9. Cách dùng Translation Package Viewer v7 để kiểm tra tài liệu tiếng Nhật</h2>
+<ul>
+<li>Mở app Viewer và chọn Library root là thư mục cha chứa các gói kết quả đã dịch.</li>
+<li>Bấm Scan để quét thư viện. Khi cần tìm kiếm mạnh hơn, bấm Rebuild Index.</li>
+<li>Chọn một tài liệu ở panel Documents, sau đó chọn segment tương ứng ở panel Segments.</li>
+<li>Dùng tab Reader để đọc nội dung. Chế độ Side by side vertical rất phù hợp để đối chiếu nguồn – đích. Bilingual stacked phù hợp khi muốn đọc liên tục theo đoạn. Source only và Target only hữu ích khi cần tập trung vào một phía.</li>
+<li>Dùng tab Search để tìm theo từ khóa, thuật ngữ hoạt chất, cảnh báo an toàn, tên tá dược hoặc cụm QA.</li>
+<li>Dùng tab QA để lọc các đoạn có vấn đề như đoạn quá dài, đoạn OCR yếu, đoạn còn cần kiểm tra thêm.</li>
+<li>Có thể dùng Copy Source, Copy Target, Copy AI Prompt hoặc Copy Fix Prompt để chuyển nhanh nội dung sang công cụ hỗ trợ biên tập.</li>
+</ul>
+<h2>10. Mẹo riêng cho dược điển Nhật, SmPC và PIL</h2>
+<ul>
+<li>Với dược điển Nhật scan nhiều bảng và chuyên khảo dài, nên chạy thử 1–2 file trước để kiểm tra chất lượng OCR.</li>
+<li>Với PIL hoặc SmPC tiếng Nhật có nhiều cảnh báo, liều dùng và chống chỉ định, nên kiểm tra lại bằng Viewer theo từng đoạn quan trọng thay vì chỉ đọc toàn văn một lần.</li>
+<li>Nếu tài liệu có nhiều hình, bảng, công thức hoặc chữ rất nhỏ, nên cân nhắc OCR toàn phần và giảm Max Chunk Chars để chia đoạn dễ kiểm tra hơn.</li>
+<li>Nếu tài liệu có cả tiếng Nhật và tiếng Anh, giữ OCR Lang = jpn+eng thường là lựa chọn an toàn.</li>
+</ul>
+<h2>11. Các tình huống nên chọn cấu hình nào?</h2>
+<ul>
+<li>PDF scan từ sách hoặc bản photocopy: OCR Mode = all, OCR Lang = jpn+eng.</li>
+<li>PDF text thông thường: OCR Mode = off hoặc auto.</li>
+<li>Tài liệu Nhật – Anh học thuật: Source Lang = ja, Target Lang = en.</li>
+<li>Tài liệu cần đọc hiểu nội bộ tại Việt Nam: Source Lang = ja, Target Lang = vi.</li>
+<li>Thư mục có nhiều nguồn ngôn ngữ lẫn nhau: Source Lang = auto, sau đó kiểm tra lại trong Viewer.</li>
+</ul>
+<h2>12. Các lỗi thường gặp và cách xử lý nhanh</h2>
+<ul>
+<li>Không OCR được PDF scan: kiểm tra lại thư mục Tesseract, file tesseract.exe và thư mục tessdata.</li>
+<li>Mở ebook không được: cài Calibre.</li>
+<li>Mở DOC/XLS/PPT cũ không được: cài LibreOffice.</li>
+<li>Bản dịch đã xong nhưng muốn rà kỹ hơn: mở lại bằng Viewer, Scan lại thư viện, rồi dùng Rebuild Index và QA.</li>
+<li>Đang làm dở muốn tiếp tục sau: dùng profile, lưu trạng thái và mở lại phiên làm việc sau.</li>
+</ul>
+<h2>13. Khuyến nghị thực hành tốt</h2>
+<ul>
+<li>Nên tách thư mục nguồn và thư mục kết quả rõ ràng.</li>
+<li>Nên chạy thử một ít tài liệu trước khi dịch hàng loạt cả thư mục lớn.</li>
+<li>Nên dùng Viewer để kiểm tra các đoạn thuộc phần chỉ định, chống chỉ định, liều dùng, cảnh báo, ADR, bảo quản và thành phần.</li>
+<li>Nên giữ bản song ngữ để đối chiếu, và chỉ dùng bản target_only khi đã kiểm tra lại các đoạn quan trọng.</li>
+</ul>
+<h2>14. Kết luận</h2>
+<ul>
+<li>Nếu tài liệu là dược điển Nhật, SmPC hoặc PIL tiếng Nhật, bộ đôi Translator Docs Book v5 GUI và Translation Package Viewer v7 là quy trình làm việc hợp lý: dịch trước, kiểm tra sau, tìm kiếm được, QA được và rất phù hợp cho xử lý thư mục tài liệu lớn.</li>
+<li>Với tài liệu scan, hãy ưu tiên OCR đúng cấu hình. Với tài liệu không scan, hãy ưu tiên đọc text trực tiếp. Sau cùng, luôn dùng Viewer để rà lại các phần chuyên môn quan trọng trước khi phát hành hoặc sử dụng nội bộ.</li>
+</ul>
+
+<div class="footer">
+Tài liệu này phù hợp để đăng website, gửi cho khách hàng, hoặc dùng làm kịch bản thuyết minh video hướng dẫn.
+</div>
+</div>
+</body>
+</html>
