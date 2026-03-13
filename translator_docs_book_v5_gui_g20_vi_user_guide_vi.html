@@ -1,0 +1,230 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Hướng dẫn sử dụng - translator_docs_book_v5_gui_g20_vi.exe</title><style>
+    body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;line-height:1.55;max-width:980px;margin:32px auto;padding:0 18px;background:#fff}
+    h1{color:#18314f;font-size:30px;margin-bottom:6px}
+    h2{color:#18314f;border-bottom:1px solid #dbe5ef;padding-bottom:5px;margin-top:28px}
+    h3{color:#39566f;margin-top:22px}
+    p,li{font-size:15px}
+    table{border-collapse:collapse;width:100%;margin:14px 0 20px 0}
+    th,td{border:1px solid #cdd7e3;padding:8px 10px;vertical-align:top}
+    th{background:#d9e6f2;text-align:left}
+    code,pre{font-family:Consolas,Menlo,monospace}
+    pre{background:#f6f8fb;padding:12px;border:1px solid #dde5ee;border-radius:6px;overflow:auto}
+    em{color:#6b7280}
+    </style></head><body><h1>Hướng dẫn sử dụng - translator_docs_book_v5_gui_g20_vi.exe</h1>
+<p><em>Bản tiếng Việt</em></p>
+<h2>Tổng quan</h2>
+<p>translator_docs_book_v5_gui_g20_vi.exe là ứng dụng desktop GUI dùng để trích xuất văn bản từ sách và tài liệu văn phòng, dịch nội dung đã trích xuất, rồi sắp xếp kết quả vào một cấu trúc thư mục đầu ra rõ ràng.</p>
+<p>Bản G20 + tiếng Việt này hướng tới các lựa chọn dịch gồm: Ả Rập, Trung Quốc giản thể, Trung Quốc phồn thể, Anh, Pháp, Đức, Hindi, Indonesia, Ý, Nhật, Hàn, Bồ Đào Nha, Nga, Tây Ban Nha, Thổ Nhĩ Kỳ và tiếng Việt.</p>
+<p>Ứng dụng hỗ trợ hàng đợi đầu vào, lưu profile, tự khôi phục trạng thái phiên trước, danh sách tài liệu có tìm kiếm, preview, log, bảng sắp xếp theo cột và menu chuột phải để mở nhanh kết quả.</p>
+<h2>Cách đặt file EXE và các app hỗ trợ</h2>
+<p>Để dùng ổn định hơn, nên đặt EXE trong thư mục app hoặc release và chuẩn bị các công cụ hỗ trợ như sau:</p>
+<ul>
+<li><p><strong>Tesseract OCR:</strong> Nên có khi xử lý PDF scan. Ứng dụng thường dò theo cấu trúc đường dẫn tương đối như ../Apps/Tesseract5.5.0/tesseract.exe và ../Apps/Tesseract5.5.0/tessdata.</p>
+</li>
+<li><p><strong>LibreOffice:</strong> Nên cài nếu cần xử lý các định dạng Office cũ như .doc, .xls, .ppt, .odt, .ods, .odp và .rtf.</p>
+</li>
+<li><p><strong>Calibre:</strong> Nên cài nếu cần xử lý ebook như .azw, .mobi và các định dạng tương tự.</p>
+</li>
+</ul>
+<p>Bạn vẫn có thể dùng EXE khi thiếu một số công cụ, nhưng khả năng OCR và chuyển đổi định dạng sẽ bị giới hạn.</p>
+<h2>Định dạng đầu vào được hỗ trợ</h2>
+<p>Chương trình có thể xử lý nhiều nhóm tài liệu khác nhau. Có thể hình dung theo các nhóm thực tế sau:</p>
+<table>
+<thead>
+<tr>
+  <th>Nhóm</th>
+  <th>Định dạng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Trích xuất trực tiếp</td>
+  <td>.txt, .csv, .tsv, .json, .xml, .yaml, .html, .htm, .md, .docx, .pptx, .xlsx, .epub, .pdf</td>
+</tr>
+<tr>
+  <td>Hỗ trợ best-effort với Calibre</td>
+  <td>.azw, .azw3, .azw4, .mobi, .prc, .fb2, .lit</td>
+</tr>
+<tr>
+  <td>Hỗ trợ best-effort với LibreOffice</td>
+  <td>.doc, .rtf, .odt, .xls, .ods, .ppt, .odp</td>
+</tr>
+</tbody>
+</table>
+<h2>Bắt đầu nhanh</h2>
+<ol>
+<li><p>Chạy translator_docs_book_v5_gui_g20_vi.exe.</p>
+</li>
+<li><p>Chọn UI Language và Appearance nếu cần.</p>
+</li>
+<li><p>Chọn Output Path.</p>
+</li>
+<li><p>Thêm một hoặc nhiều file, hoặc thêm cả thư mục.</p>
+</li>
+<li><p>Chọn Translator, Source Lang, Target Lang, OCR Mode và OCR Lang.</p>
+</li>
+<li><p>Nhấn Start.</p>
+</li>
+<li><p>Theo dõi tiến trình trong tab Log.</p>
+</li>
+<li><p>Sau khi xử lý xong, nhấn Refresh và xem kết quả trong Documents, Files và Preview.</p>
+</li>
+<li><p>Dùng Open Output để mở thư mục đầu ra gốc.</p>
+</li>
+</ol>
+<h2>Quy trình chính trong GUI</h2>
+<p>GUI được thiết kế cho quy trình dịch tài liệu theo lô, với phần hàng đợi đầu vào ở phía trước và phần rà soát kết quả ở phía sau.</p>
+<h3>Input Queue</h3>
+<p>Hàng đợi đầu vào nhận cả file và thư mục.</p>
+<p>Bảng có thể sắp xếp bằng cách nhắp vào tiêu đề cột.</p>
+<p>Ô tìm kiếm sẽ lọc dữ liệu theo tên hoặc đường dẫn.</p>
+<p>Nhắp đúp để mở file hoặc thư mục đang chọn.</p>
+<p>Nhắp chuột phải để dùng các lệnh mở nhanh như open, open parent, copy path, copy name và remove selected.</p>
+<h3>Settings</h3>
+<table>
+<thead>
+<tr>
+  <th>Thiết lập</th>
+  <th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Translator</td>
+  <td>Chọn bộ dịch. &quot;deep_translator&quot; là chế độ dịch thông thường; &quot;none&quot; phù hợp khi chỉ muốn test trích xuất.</td>
+</tr>
+<tr>
+  <td>Source Lang</td>
+  <td>Chọn ngôn ngữ nguồn của tài liệu, hoặc dùng auto khi chưa chắc.</td>
+</tr>
+<tr>
+  <td>Target Lang</td>
+  <td>Chọn ngôn ngữ đích. Bản build này hướng tới nhóm ngôn ngữ G20 và thêm tiếng Việt.</td>
+</tr>
+<tr>
+  <td>OCR Mode</td>
+  <td>off = không OCR; auto = OCR các trang có rất ít text gốc; all = OCR toàn bộ trang PDF.</td>
+</tr>
+<tr>
+  <td>OCR Lang</td>
+  <td>Nhập mã OCR của Tesseract, ví dụ jpn+eng, chi_sim+eng, chi_tra+eng, kor+eng, rus+eng, ara+eng, vie+eng.</td>
+</tr>
+<tr>
+  <td>Folder Style</td>
+  <td>auto ưu tiên tương thích với dữ liệu cũ, hash12 tạo thư mục duy nhất an toàn hơn, plain chỉ dùng tên nguồn.</td>
+</tr>
+<tr>
+  <td>Retries / Retry Delay</td>
+  <td>Dùng khi yêu cầu dịch bị lỗi tạm thời.</td>
+</tr>
+<tr>
+  <td>Max Chunk Chars</td>
+  <td>Điều khiển kích thước mỗi đoạn gửi đi dịch. Giá trị nhỏ hơn thường an toàn hơn khi job không ổn định.</td>
+</tr>
+<tr>
+  <td>Skip complete docs</td>
+  <td>Bỏ qua tài liệu đã có manifest hoàn chỉnh và đủ file dịch.</td>
+</tr>
+<tr>
+  <td>Overwrite translation</td>
+  <td>Buộc ghi đè bản dịch cũ.</td>
+</tr>
+<tr>
+  <td>Retranslate errors only</td>
+  <td>Giữ các đoạn đã thành công và chỉ dịch lại phần lỗi.</td>
+</tr>
+<tr>
+  <td>Copy original file</td>
+  <td>Sao chép file đầu vào vào 01_source để truy vết.</td>
+</tr>
+<tr>
+  <td>Recursive scan</td>
+  <td>Khi thêm thư mục, quét cả các file hỗ trợ nằm trong thư mục con.</td>
+</tr>
+</tbody>
+</table>
+<h3>Profile và khôi phục phiên trước</h3>
+<p>Profile lưu cả thiết lập dịch lẫn giao diện.</p>
+<p>Bạn có thể load, save, save as, clone và delete profile.</p>
+<p>Ứng dụng cũng lưu trạng thái phiên gần nhất, gồm bố cục cửa sổ, profile đang chọn, hàng đợi đầu vào, chuỗi tìm kiếm và tab cuối cùng; sau đó tự khôi phục khi mở lại chương trình.</p>
+<h3>Search, Documents, Files, Preview và Log</h3>
+<p>Search lọc hàng đợi đầu vào, danh sách tài liệu đã xử lý và danh sách file đầu ra.</p>
+<p>Documents hiển thị từng thư mục tài liệu đã xử lý cùng trạng thái, số segment, số lỗi và thời gian sửa đổi.</p>
+<p>Files liệt kê toàn bộ file được tạo trong thư mục tài liệu đang chọn.</p>
+<p>Preview xem trước nội dung text của các file như JSON, Markdown và TXT.</p>
+<p>Log hiển thị tiến trình chạy và lỗi phát sinh.</p>
+<p>Bạn có thể nhắp chuột phải trên danh sách tài liệu đã xử lý để mở trực tiếp thư mục tài liệu hoặc mở nhanh các file quan trọng như manifest.json, bilingual.md, target_only.md, full_target.txt, full_source.txt, translation_bundle.json và translation_report.json.</p>
+<h3>Gợi ý cấu hình OCR</h3>
+<p>| Loại tài liệu | Gợi ý cấu hình |
+| --- | --- |
+| Tài liệu scan tiếng Nhật | Source: ja | OCR Lang: jpn+eng | Target thường dùng: en hoặc vi |
+| Tài liệu scan tiếng Trung giản thể | Source: zh-CN | OCR Lang: chi_sim+eng | Target thường dùng: en hoặc vi |
+| Tài liệu scan tiếng Trung phồn thể | Source: zh-TW | OCR Lang: chi_tra+eng | Target thường dùng: en hoặc vi |
+| Tài liệu scan tiếng Hàn | Source: ko | OCR Lang: kor+eng | Target thường dùng: en hoặc vi |
+| Tài liệu scan tiếng Nga | Source: ru | OCR Lang: rus+eng | Target thường dùng: en hoặc vi |
+| Tài liệu scan tiếng Ả Rập | Source: ar | OCR Lang: ara+eng | Target thường dùng: en hoặc vi |
+| Tài liệu scan tiếng Hindi | Source: hi | OCR Lang: hin+eng | Target thường dùng: en hoặc vi |
+| Tài liệu scan tiếng Việt | Source: vi | OCR Lang: vie+eng | Target thường dùng: en hoặc vi |
+| Pháp / Đức / Tây Ban Nha / Ý / Bồ Đào Nha / Thổ Nhĩ Kỳ / Indonesia | Chọn đúng Source Lang và cài gói ngôn ngữ Tesseract tương ứng khi cần OCR. |</p>
+<h2>Cấu trúc thư mục đầu ra</h2>
+<p>Mỗi file nguồn sau khi xử lý sẽ được ghi vào một thư mục tài liệu riêng. Tên thư mục có thể ở dạng plain, hashed hoặc auto tùy theo Folder Style.</p>
+<pre><code class="language-text">output_root/
+  batch_summary_gui.json
+  &lt;document_folder&gt;/
+    manifest.json
+    01_source/
+    02_extracted/
+      extracted_document.json
+      full_source.txt
+    03_translation/
+      translation_bundle.json
+      full_target.txt
+      bilingual.md
+      target_only.md
+    04_indexes/
+      segment_index.csv
+      segment_index.jsonl
+      translation_memory.csv
+    08_logs/
+      translation_log.csv
+    09_reports/
+      translation_report.json
+</code></pre>
+<h3>Ý nghĩa từng thư mục và file</h3>
+<p>manifest.json: bản tóm tắt xử lý chính, gồm file nguồn, hash nguồn, ngôn ngữ nguồn và đích, cấu hình OCR, số segment và trạng thái cuối cùng của tài liệu.</p>
+<p>01_source: bản sao tùy chọn của file gốc.</p>
+<p>02_extracted/extracted_document.json: dữ liệu trích xuất có cấu trúc theo từng segment.</p>
+<p>02_extracted/full_source.txt: toàn bộ text nguồn đã ghép lại để rà soát.</p>
+<p>03_translation/translation_bundle.json: dữ liệu song song theo segment, trạng thái và metadata.</p>
+<p>03_translation/full_target.txt: toàn bộ text đích đã ghép lại.</p>
+<p>03_translation/bilingual.md: file Markdown song ngữ.</p>
+<p>03_translation/target_only.md: file Markdown chỉ chứa ngôn ngữ đích.</p>
+<p>04_indexes: index tìm kiếm theo segment và translation memory CSV.</p>
+<p>08_logs/translation_log.csv: log dịch chi tiết ở mức segment.</p>
+<p>09_reports/translation_report.json: báo cáo tập trung vào lỗi.</p>
+<p>batch_summary_gui.json: file tổng hợp cho toàn bộ đợt chạy, nằm ở thư mục output gốc.</p>
+<h2>Khuyến nghị sử dụng</h2>
+<ul>
+<li><p>Chỉ dùng auto phát hiện ngôn ngữ khi bạn chưa chắc ngôn ngữ nguồn. Nếu đã biết trước, chọn trực tiếp thường sạch hơn.</p>
+</li>
+<li><p>Với PDF scan, nên thử OCR Mode = auto trước. Chỉ dùng all khi text gốc trong PDF quá kém.</p>
+</li>
+<li><p>Giữ Copy original file bật khi cần truy vết.</p>
+</li>
+<li><p>Giữ Skip complete docs bật khi chạy lại theo kiểu bổ sung dần.</p>
+</li>
+<li><p>Dùng Retranslate errors only khi lần chạy trước đã hoàn thành phần lớn segment và chỉ còn lỗi cục bộ.</p>
+</li>
+<li><p>Sau mỗi lần chạy, nên rà manifest.json, translation_report.json, bilingual.md và full_target.txt trước khi công bố hoặc tái sử dụng bản dịch.</p>
+</li>
+</ul>
+<h2>Khắc phục sự cố</h2>
+<h3>OCR không hoạt động</h3>
+<p>Hãy kiểm tra Tesseract đã được cài và gói dữ liệu ngôn ngữ tương ứng đã có trong tessdata. Ví dụ OCR tiếng Nhật cần jpn, tiếng Việt cần vie, tiếng Trung giản thể cần chi_sim và tiếng Ả Rập cần ara.</p>
+<h3>Một số file mở không tốt hoặc chuyển đổi lỗi</h3>
+<p>Nên cài LibreOffice cho các định dạng Office cũ và Calibre cho các định dạng ebook.</p>
+<h3>Tài liệu bị bỏ qua ngoài ý muốn</h3>
+<p>Điều này thường xảy ra khi ứng dụng phát hiện thư mục tài liệu đó đã hoàn tất từ trước. Tắt Skip complete docs hoặc bật Overwrite translation nếu bạn muốn tạo lại từ đầu.</p>
+<h3>Preview trống với một số file</h3>
+<p>Tab Preview chủ yếu dùng cho các đầu ra dạng text. Với file nhị phân, nên mở trực tiếp từ tab Files hoặc menu chuột phải của tài liệu.</p>
+</body></html>

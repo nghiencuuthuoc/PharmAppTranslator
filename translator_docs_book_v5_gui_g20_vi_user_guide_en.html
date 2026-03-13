@@ -1,0 +1,230 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>User Guide - translator_docs_book_v5_gui_g20_vi.exe</title><style>
+    body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;line-height:1.55;max-width:980px;margin:32px auto;padding:0 18px;background:#fff}
+    h1{color:#18314f;font-size:30px;margin-bottom:6px}
+    h2{color:#18314f;border-bottom:1px solid #dbe5ef;padding-bottom:5px;margin-top:28px}
+    h3{color:#39566f;margin-top:22px}
+    p,li{font-size:15px}
+    table{border-collapse:collapse;width:100%;margin:14px 0 20px 0}
+    th,td{border:1px solid #cdd7e3;padding:8px 10px;vertical-align:top}
+    th{background:#d9e6f2;text-align:left}
+    code,pre{font-family:Consolas,Menlo,monospace}
+    pre{background:#f6f8fb;padding:12px;border:1px solid #dde5ee;border-radius:6px;overflow:auto}
+    em{color:#6b7280}
+    </style></head><body><h1>User Guide - translator_docs_book_v5_gui_g20_vi.exe</h1>
+<p><em>English edition</em></p>
+<h2>Overview</h2>
+<p>translator_docs_book_v5_gui_g20_vi.exe is a desktop GUI for extracting text from books and office documents, translating the extracted content, and organizing the results into a structured output folder.</p>
+<p>The updated G20 + Vietnamese build is intended to work with these translation choices: Arabic, Chinese (Simplified), Chinese (Traditional), English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Russian, Spanish, Turkish, and Vietnamese.</p>
+<p>The application supports a queue-based workflow, saved profiles, automatic state restore, searchable document lists, preview, logs, sortable tables, and right-click shortcuts for quickly opening outputs.</p>
+<h2>Where to place the EXE and helper apps</h2>
+<p>For the smoothest experience, keep the EXE in your app or release folder and prepare helper tools like this:</p>
+<ul>
+<li><p><strong>Tesseract OCR:</strong> Recommended for scanned PDFs. The app looks for a common relative layout such as ../Apps/Tesseract5.5.0/tesseract.exe and ../Apps/Tesseract5.5.0/tessdata.</p>
+</li>
+<li><p><strong>LibreOffice:</strong> Recommended for legacy Office files such as .doc, .xls, .ppt, .odt, .ods, .odp, and .rtf.</p>
+</li>
+<li><p><strong>Calibre:</strong> Recommended for ebook formats such as .azw, .mobi, and related formats.</p>
+</li>
+</ul>
+<p>The EXE can still be used without every helper tool, but OCR and some conversions will be limited.</p>
+<h2>Supported input formats</h2>
+<p>The program can process multiple document families. Practical support can be grouped as follows:</p>
+<table>
+<thead>
+<tr>
+  <th>Category</th>
+  <th>Formats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Direct text extraction</td>
+  <td>.txt, .csv, .tsv, .json, .xml, .yaml, .html, .htm, .md, .docx, .pptx, .xlsx, .epub, .pdf</td>
+</tr>
+<tr>
+  <td>Best-effort with Calibre</td>
+  <td>.azw, .azw3, .azw4, .mobi, .prc, .fb2, .lit</td>
+</tr>
+<tr>
+  <td>Best-effort with LibreOffice</td>
+  <td>.doc, .rtf, .odt, .xls, .ods, .ppt, .odp</td>
+</tr>
+</tbody>
+</table>
+<h2>Quick start</h2>
+<ol>
+<li><p>Launch translator_docs_book_v5_gui_g20_vi.exe.</p>
+</li>
+<li><p>Choose UI Language and Appearance if needed.</p>
+</li>
+<li><p>Set Output Path.</p>
+</li>
+<li><p>Add one or more files, or add a whole folder.</p>
+</li>
+<li><p>Choose Translator, Source Lang, Target Lang, OCR Mode, and OCR Lang.</p>
+</li>
+<li><p>Click Start.</p>
+</li>
+<li><p>Watch the Log tab during processing.</p>
+</li>
+<li><p>After completion, click Refresh and review results in Documents, Files, and Preview.</p>
+</li>
+<li><p>Use Open Output to open the output root folder.</p>
+</li>
+</ol>
+<h2>Main workflow in the GUI</h2>
+<p>The GUI is designed for batch-oriented document translation, with the queue on the front end and processed outputs on the review side.</p>
+<h3>Input Queue</h3>
+<p>The input queue supports both files and folders.</p>
+<p>The table can be sorted by clicking column headers.</p>
+<p>The search box filters queue items by name or path.</p>
+<p>Double-click opens the selected file or folder.</p>
+<p>Right-click provides quick actions such as open, open parent, copy path, copy name, and remove selected.</p>
+<h3>Settings</h3>
+<table>
+<thead>
+<tr>
+  <th>Setting</th>
+  <th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Translator</td>
+  <td>Select the translation engine. &quot;deep_translator&quot; is the normal translation mode; &quot;none&quot; is useful for extraction-only testing.</td>
+</tr>
+<tr>
+  <td>Source Lang</td>
+  <td>Choose the document source language, or use auto when unsure.</td>
+</tr>
+<tr>
+  <td>Target Lang</td>
+  <td>Choose the output language. This build is aimed at G20 languages plus Vietnamese.</td>
+</tr>
+<tr>
+  <td>OCR Mode</td>
+  <td>off = do not OCR; auto = OCR pages with very little native text; all = OCR all PDF pages.</td>
+</tr>
+<tr>
+  <td>OCR Lang</td>
+  <td>Enter the Tesseract OCR code, for example jpn+eng, chi_sim+eng, chi_tra+eng, kor+eng, rus+eng, ara+eng, vie+eng.</td>
+</tr>
+<tr>
+  <td>Folder Style</td>
+  <td>auto keeps compatibility with existing outputs, hash12 creates safer unique folders, plain uses only the source name.</td>
+</tr>
+<tr>
+  <td>Retries / Retry Delay</td>
+  <td>Used when translation requests fail temporarily.</td>
+</tr>
+<tr>
+  <td>Max Chunk Chars</td>
+  <td>Controls how much text is sent per translation chunk. Lower values may be safer for unstable jobs.</td>
+</tr>
+<tr>
+  <td>Skip complete docs</td>
+  <td>Skips documents that already have a complete manifest and translation outputs.</td>
+</tr>
+<tr>
+  <td>Overwrite translation</td>
+  <td>Forces the app to replace existing translations.</td>
+</tr>
+<tr>
+  <td>Retranslate errors only</td>
+  <td>Keeps successful segments and only retries failed ones.</td>
+</tr>
+<tr>
+  <td>Copy original file</td>
+  <td>Copies the input file into 01_source for traceability.</td>
+</tr>
+<tr>
+  <td>Recursive scan</td>
+  <td>When a folder is added, include supported files from subfolders.</td>
+</tr>
+</tbody>
+</table>
+<h3>Profiles and last-session restore</h3>
+<p>Profiles save both translation settings and UI preferences.</p>
+<p>You can load, save, save as, clone, and delete profiles.</p>
+<p>The app also saves the last session state, including window layout, selected profile, queue items, search text, and the last active tab, then restores that state the next time you open the application.</p>
+<h3>Search, Documents, Files, Preview, and Log</h3>
+<p>Search filters the input queue, processed documents, and output files.</p>
+<p>Documents shows each processed document folder with status, segment count, errors, and modification time.</p>
+<p>Files lists every generated file inside the selected document folder.</p>
+<p>Preview shows text previews for textual outputs such as JSON, Markdown, and TXT.</p>
+<p>Log shows runtime progress and failures.</p>
+<p>Right-click on the processed document list to open the document folder directly or jump to key files such as manifest.json, bilingual.md, target_only.md, full_target.txt, full_source.txt, translation_bundle.json, and translation_report.json.</p>
+<h3>Recommended OCR combinations</h3>
+<p>| Document type | Recommended setup |
+| --- | --- |
+| Japanese scan | Source: ja | OCR Lang: jpn+eng | Typical targets: en or vi |
+| Chinese Simplified scan | Source: zh-CN | OCR Lang: chi_sim+eng | Typical targets: en or vi |
+| Chinese Traditional scan | Source: zh-TW | OCR Lang: chi_tra+eng | Typical targets: en or vi |
+| Korean scan | Source: ko | OCR Lang: kor+eng | Typical targets: en or vi |
+| Russian scan | Source: ru | OCR Lang: rus+eng | Typical targets: en or vi |
+| Arabic scan | Source: ar | OCR Lang: ara+eng | Typical targets: en or vi |
+| Hindi scan | Source: hi | OCR Lang: hin+eng | Typical targets: en or vi |
+| Vietnamese scan | Source: vi | OCR Lang: vie+eng | Typical targets: en or vi |
+| French / German / Spanish / Italian / Portuguese / Turkish / Indonesian | Use the matching source language and install the correct Tesseract language pack when OCR is needed. |</p>
+<h2>Output structure</h2>
+<p>Each processed source file is written into its own document folder. The folder name may be plain, hashed, or auto-managed depending on Folder Style.</p>
+<pre><code class="language-text">output_root/
+  batch_summary_gui.json
+  &lt;document_folder&gt;/
+    manifest.json
+    01_source/
+    02_extracted/
+      extracted_document.json
+      full_source.txt
+    03_translation/
+      translation_bundle.json
+      full_target.txt
+      bilingual.md
+      target_only.md
+    04_indexes/
+      segment_index.csv
+      segment_index.jsonl
+      translation_memory.csv
+    08_logs/
+      translation_log.csv
+    09_reports/
+      translation_report.json
+</code></pre>
+<h3>What each folder and file is for</h3>
+<p>manifest.json: main processing summary, including source file, source hash, source and target language, OCR settings, segment counts, and final document status.</p>
+<p>01_source: optional copy of the original file.</p>
+<p>02_extracted/extracted_document.json: structured extracted content by segment.</p>
+<p>02_extracted/full_source.txt: concatenated source text for review.</p>
+<p>03_translation/translation_bundle.json: per-segment bilingual data, status, and metadata.</p>
+<p>03_translation/full_target.txt: concatenated target text.</p>
+<p>03_translation/bilingual.md: bilingual Markdown output.</p>
+<p>03_translation/target_only.md: target-language Markdown output.</p>
+<p>04_indexes: searchable segment indexes and translation memory CSV.</p>
+<p>08_logs/translation_log.csv: low-level segment translation log.</p>
+<p>09_reports/translation_report.json: error-focused summary report.</p>
+<p>batch_summary_gui.json: summary file for the entire run, saved in the output root.</p>
+<h2>Practical recommendations</h2>
+<ul>
+<li><p>Use auto source detection only when you are unsure. If you know the source language, selecting it explicitly is usually cleaner.</p>
+</li>
+<li><p>For scanned PDFs, prefer OCR Mode = auto first. Use all only when the native PDF text is poor.</p>
+</li>
+<li><p>Keep Copy original file enabled when traceability matters.</p>
+</li>
+<li><p>Keep Skip complete docs enabled for incremental reruns.</p>
+</li>
+<li><p>Use Retranslate errors only when a previous run already completed most segments successfully.</p>
+</li>
+<li><p>After a run, review manifest.json, translation_report.json, bilingual.md, and full_target.txt before publishing or reusing translated material.</p>
+</li>
+</ul>
+<h2>Troubleshooting</h2>
+<h3>OCR did not work</h3>
+<p>Check that Tesseract is installed and that the required language data exists in tessdata. For example, Japanese OCR needs jpn, Vietnamese OCR needs vie, Chinese Simplified OCR needs chi_sim, and Arabic OCR needs ara.</p>
+<h3>Some files do not open or convert well</h3>
+<p>Install LibreOffice for old Office formats and Calibre for ebook formats.</p>
+<h3>A document is skipped unexpectedly</h3>
+<p>This usually means the app detected an already completed document folder. Disable Skip complete docs or enable Overwrite translation if you want to force regeneration.</p>
+<h3>Preview is empty for some files</h3>
+<p>The Preview tab is mainly for text-like outputs. Binary files should be opened directly from the Files tab or the document context menu.</p>
+</body></html>
