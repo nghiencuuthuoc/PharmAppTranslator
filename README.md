@@ -232,4 +232,3 @@ Suggested release assets:
 
 ![](./Screenshots/2026-03-12%2015.31.39.screenshot.png)
 
-![](./Screenshots/2026-03-12%2016.39.21.screenshot.png)
