@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hướng dẫn dịch dược điển tiếng Trung dạng scan</title>
+<style>
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #f7f3ea; color: #2a2a2a; }
+.container { max-width: 980px; margin: 0 auto; background: #fffdf8; padding: 42px 54px; box-shadow: 0 2px 16px rgba(0,0,0,.08); }
+h1, h2, h3 { color: #1f4d4a; }
+h1 { font-size: 2.1rem; margin-top: 0; border-bottom: 3px solid #d8b36a; padding-bottom: 10px; }
+h2 { margin-top: 2rem; font-size: 1.45rem; }
+h3 { margin-top: 1.2rem; font-size: 1.1rem; }
+p, li { line-height: 1.7; font-size: 1rem; }
+ul { padding-left: 1.25rem; }
+code { background: #f0eadf; padding: 2px 5px; border-radius: 4px; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+th, td { border: 1px solid #c9c1b2; padding: 10px 12px; vertical-align: top; }
+th { background: #f0e4c7; text-align: left; }
+.note { background: #eef6f4; border-left: 5px solid #1f4d4a; padding: 14px 16px; margin: 1rem 0; }
+.footer { margin-top: 2rem; font-size: .92rem; color: #5f5f5f; border-top: 1px solid #ddd3c3; padding-top: 14px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Hướng dẫn dịch dược điển tiếng Trung dạng scan bằng Translator Docs Book v5 GUI</h1>
+<h2>1. Mục đích của bài hướng dẫn</h2>
+<p>Tài liệu dược điển tiếng Trung, chuyên luận, phụ lục, tiêu chuẩn kiểm nghiệm, bảng chỉ tiêu, bảng giới hạn tạp chất hoặc bảng điều kiện sắc ký thường được lưu dưới dạng PDF scan. Với loại tài liệu này, mục tiêu thực tế không chỉ là dịch được nội dung mà còn phải đọc được đúng thuật ngữ, giữ được số liệu, hiểu được cấu trúc bảng và giảm lỗi OCR.</p>
+<p>Bài hướng dẫn này tập trung vào cách cấu hình Translator Docs Book v5 GUI để xử lý tài liệu tiếng Trung giản thể hoặc phồn thể, đặc biệt là các file scan có nhiều bảng.</p>
+<h2>2. Khi nào nên dùng cấu hình cho tiếng Trung?</h2>
+<p>Nên dùng cấu hình tiếng Trung khi tài liệu thuộc một trong các trường hợp sau:</p>
+<ul>
+<li>Dược điển Trung Quốc hoặc tài liệu chuẩn nội bộ viết bằng tiếng Trung.</li>
+<li>PDF scan từ sách, bản photocopy hoặc bản in cũ.</li>
+<li>Tài liệu có nhiều bảng thành phần, hàm lượng, giới hạn, điều kiện thử nghiệm.</li>
+<li>Tài liệu có lẫn chữ Hán, số liệu, ký hiệu Latin, tên hoạt chất hoặc tên thuốc thử bằng tiếng Anh.</li>
+</ul>
+<h2>3. Cấu hình khuyến nghị</h2>
+<h3>3.1. Với tiếng Trung giản thể</h3>
+<ul>
+<li>OCR Mode: `all` hoặc `auto`</li>
+<li>OCR Lang: `chi_sim+eng`</li>
+<li>Source Lang: `zh-CN`</li>
+<li>Target Lang: `vi` hoặc `en`</li>
+</ul>
+<h3>3.2. Với tiếng Trung phồn thể</h3>
+<ul>
+<li>OCR Mode: `all` hoặc `auto`</li>
+<li>OCR Lang: `chi_tra+eng`</li>
+<li>Source Lang: `zh-TW`</li>
+<li>Target Lang: `vi` hoặc `en`</li>
+</ul>
+<h3>3.3. Ý nghĩa của từng lựa chọn</h3>
+<ul>
+<li>`OCR Mode = all`: ép ứng dụng OCR toàn bộ trang. Phù hợp nhất với PDF scan dạng ảnh.</li>
+<li>`OCR Mode = auto`: chỉ OCR khi trang không có lớp text đủ tốt. Hợp với PDF trộn giữa scan và text.</li>
+<li>`chi_sim+eng` hoặc `chi_tra+eng`: ngoài tiếng Trung còn giữ khả năng nhận chữ Latin, con số, đơn vị, tên hóa chất và ký hiệu tiếng Anh.</li>
+<li>`Target Lang = vi`: phù hợp khi cần đọc hiểu nhanh bằng tiếng Việt.</li>
+<li>`Target Lang = en`: phù hợp khi cần tạo bản trung gian tiếng Anh để soát thuật ngữ chuyên môn.</li>
+</ul>
+<h2>4. Nên dịch thẳng sang tiếng Việt hay đi qua tiếng Anh?</h2>
+<p>Có hai chiến lược thực tế.</p>
+<h3>Cách 1: Dịch thẳng Trung -> Việt</h3>
+<p>Phù hợp khi:</p>
+<ul>
+<li>Cần đọc nhanh nội dung.</li>
+<li>Tài liệu không quá nhiều thuật ngữ khó.</li>
+<li>Mục tiêu là hiểu ý chính, tra cứu nhanh chuyên luận hoặc đối chiếu tiêu chuẩn.</li>
+</ul>
+<h3>Cách 2: Dịch Trung -> Anh -> hiệu đính sang Việt</h3>
+<p>Phù hợp khi:</p>
+<ul>
+<li>Tài liệu quá chuyên ngành.</li>
+<li>Có nhiều đoạn mô tả phép thử, điều kiện sắc ký, thuốc thử, định tính, định lượng, tạp chất liên quan.</li>
+<li>Cần QA kỹ trước khi sử dụng trong công việc nghiên cứu, đăng bài hoặc chuẩn hóa dữ liệu.</li>
+</ul>
+<p>Khuyến nghị thực tế: với dược điển, nhiều nhóm người dùng sẽ dễ soát lỗi hơn nếu tạo bản tiếng Anh trước, sau đó mới hiệu đính sang tiếng Việt.</p>
+<h2>5. Quy trình thao tác trong Translator Docs Book v5 GUI</h2>
+<h3>Bước 1. Chuẩn bị file nguồn</h3>
+<p>Đặt các file PDF scan vào một thư mục riêng. Nên gom theo từng chủ đề hoặc từng cuốn để dễ theo dõi.</p>
+<p>Ví dụ:</p>
+<ul>
+<li>`D:/PharmBook/Chinese_Pharmacopeia/Volume_1`</li>
+<li>`D:/PharmBook/Chinese_Pharmacopeia/Herbal_Monographs`</li>
+</ul>
+<h3>Bước 2. Mở ứng dụng</h3>
+<p>Chạy file `translator_docs_book_v5_gui.exe`.</p>
+<h3>Bước 3. Chọn thư mục đầu vào và đầu ra</h3>
+<ul>
+<li>`Input Path`: chọn thư mục chứa PDF scan tiếng Trung.</li>
+<li>`Output Path`: chọn thư mục lưu kết quả dịch.</li>
+</ul>
+<p>Nên dùng thư mục đầu ra riêng, ví dụ:</p>
+<ul>
+<li>`D:/PharmBook/Chinese_Pharmacopeia_Trans_v5`</li>
+</ul>
+<h3>Bước 4. Chọn kiểu xử lý</h3>
+<p>Tại phần thiết lập phía dưới giao diện:</p>
+<ul>
+<li>Translator: chọn bộ dịch đang sử dụng trong app.</li>
+<li>Source Lang: chọn `zh-CN` hoặc `zh-TW`.</li>
+<li>Target Lang: chọn `vi` hoặc `en`.</li>
+<li>OCR Mode: chọn `all` nếu file là scan thuần ảnh; chọn `auto` nếu file là PDF hỗn hợp.</li>
+<li>OCR Lang: chọn `chi_sim+eng` hoặc `chi_tra+eng`.</li>
+<li>Max Chunk Chars: giữ mức vừa phải để mỗi đoạn không quá dài.</li>
+<li>Retries và Retry Delay: nên giữ giá trị an toàn nếu chạy nhiều file.</li>
+</ul>
+<h3>Bước 5. Thêm file hoặc thêm cả thư mục</h3>
+<ul>
+<li>`Add Files`: dùng khi muốn chọn một vài file mẫu.</li>
+<li>`Add Folder`: dùng khi muốn chạy cả thư mục.</li>
+</ul>
+<p>Khuyến nghị: luôn chạy thử 1 đến 3 file trước để kiểm tra chất lượng OCR và hướng dịch.</p>
+<h3>Bước 6. Bấm Start</h3>
+<p>Sau khi bấm `Start`, ứng dụng sẽ:</p>
+<ul>
+<li>Quét tài liệu.</li>
+<li>OCR từng trang nếu cần.</li>
+<li>Chia nội dung thành từng phần.</li>
+<li>Dịch và ghi log.</li>
+<li>Tạo gói kết quả đầu ra.</li>
+</ul>
+<h3>Bước 7. Theo dõi quá trình chạy</h3>
+<ul>
+<li>Bảng `Documents` giúp theo dõi trạng thái từng tài liệu.</li>
+<li>Tab `Preview` dùng để xem nhanh.</li>
+<li>Tab `Log` hiển thị segment đang chạy, lỗi OCR hoặc lỗi dịch nếu có.</li>
+</ul>
+<h2>6. Đặc thù của bảng scan trong dược điển tiếng Trung</h2>
+<p>Đây là điểm quan trọng nhất.</p>
+<p>PDF bảng scan không phải lúc nào cũng giữ nguyên được cấu trúc ô bảng sau OCR. Trong nhiều trường hợp, ứng dụng sẽ đọc bảng theo từng dòng văn bản thay vì tái tạo bảng đẹp như file Excel gốc. Điều này là bình thường với tài liệu scan.</p>
+<h3>Những gì thường vẫn làm tốt</h3>
+<ul>
+<li>Đọc tên chỉ tiêu.</li>
+<li>Đọc số liệu, giới hạn, đơn vị.</li>
+<li>Đọc điều kiện thử nghiệm.</li>
+<li>Đọc ghi chú và tiêu đề cột nếu chất lượng scan đủ tốt.</li>
+</ul>
+<h3>Những gì dễ phát sinh lỗi</h3>
+<ul>
+<li>Lệch hàng giữa cột trái và cột phải.</li>
+<li>Gộp nhầm 2 dòng thành 1 dòng.</li>
+<li>Nhận sai ký tự gần giống nhau.</li>
+<li>Nhận sai dấu chấm thập phân, dấu phần trăm, đơn vị hoặc ký hiệu sắc ký.</li>
+</ul>
+<p>Vì vậy, với bảng rất quan trọng, nên xem bản dịch như bản đọc hiểu trước, sau đó QA lại kỹ.</p>
+<h2>7. Cách giảm lỗi khi dịch bảng scan</h2>
+<h3>7.1. Ưu tiên bản scan rõ</h3>
+<p>Nếu có nhiều bản PDF, hãy chọn bản:</p>
+<ul>
+<li>Độ phân giải cao hơn.</li>
+<li>Nền sạch hơn.</li>
+<li>Ít nghiêng, ít bóng mờ.</li>
+<li>Chữ đậm, cột rõ.</li>
+</ul>
+<h3>7.2. Giữ thêm tiếng Anh trong OCR</h3>
+<p>Nhiều bảng dược điển có:</p>
+<ul>
+<li>Tên hoạt chất Latin.</li>
+<li>Tên dung môi hoặc thuốc thử tiếng Anh.</li>
+<li>Đơn vị như mg, mL, %, ppm, pH.</li>
+</ul>
+<p>Vì vậy `chi_sim+eng` hoặc `chi_tra+eng` thường tốt hơn chỉ dùng tiếng Trung đơn lẻ.</p>
+<h3>7.3. Chạy thử trên tài liệu mẫu</h3>
+<p>Không nên đưa ngay cả thư viện lớn vào chạy. Hãy thử bằng:</p>
+<ul>
+<li>1 file có bảng đơn giản.</li>
+<li>1 file có bảng phức tạp.</li>
+<li>1 file có cả đoạn văn và bảng.</li>
+</ul>
+<p>Sau đó mới chốt cấu hình chuẩn cho toàn bộ batch.</p>
+<h3>7.4. QA lại bằng Viewer</h3>
+<p>Sau khi dịch xong, nên mở bằng `translator_docs_book_viewer_v7_gui.exe` để rà.</p>
+<h2>8. Cách dùng Viewer để kiểm tra bản dịch tiếng Trung</h2>
+<p>Sau khi có kết quả dịch, mở Viewer và thực hiện như sau:</p>
+<h3>Bước 1. Chọn Library root</h3>
+<p>Trỏ tới thư mục chứa các gói kết quả dịch.</p>
+<h3>Bước 2. Bấm Scan</h3>
+<p>Viewer sẽ quét danh sách tài liệu đã hoàn thành.</p>
+<h3>Bước 3. Chọn tài liệu cần kiểm tra</h3>
+<p>Xem theo từng tài liệu, từng trang hoặc từng segment.</p>
+<h3>Bước 4. Chọn chế độ đọc phù hợp</h3>
+<p>Khuyến nghị:</p>
+<ul>
+<li>`side_by_side_vertical`: đọc song song nguồn và bản dịch theo 2 cột đứng.</li>
+<li>`stacked`: đọc nguồn ở trên, bản dịch ở dưới.</li>
+</ul>
+<p>Với bảng hoặc trang nặng dữ liệu, chế độ song song đứng thường dễ kiểm tra hơn.</p>
+<h3>Bước 5. Dùng QA và Search</h3>
+<ul>
+<li>Tìm các cụm quan trọng như tên hoạt chất, giới hạn, đơn vị.</li>
+<li>Kiểm tra các đoạn dài bất thường.</li>
+<li>Soát các segment có dấu hiệu OCR chưa ổn.</li>
+</ul>
+<h2>9. Trường hợp nên chọn Target = English trước</h2>
+<p>Nên chọn `Target Lang = en` trước khi:</p>
+<ul>
+<li>Dịch chuyên luận định lượng hoặc sắc ký phức tạp.</li>
+<li>Có nhiều thuật ngữ dược điển chuẩn hóa.</li>
+<li>Cần trao đổi với nhóm kỹ thuật hoặc đối tác quen đọc tiếng Anh.</li>
+<li>Muốn dùng bản tiếng Anh làm bước trung gian để QA.</li>
+</ul>
+<p>Sau khi có bản tiếng Anh ổn hơn, có thể hiệu đính sang tiếng Việt hoặc dùng AI/biên tập viên để hoàn thiện bản Việt.</p>
+<h2>10. Ví dụ cấu hình khuyến nghị theo tình huống</h2>
+<table>
+<thead><tr><th>Tình huống</th><th>OCR Mode</th><th>OCR Lang</th><th>Source</th><th>Target</th><th>Gợi ý</th></tr></thead><tbody>
+<tr><td>Dược điển Trung Quốc giản thể, PDF scan thuần ảnh</td><td>all</td><td>chi_sim+eng</td><td>zh-CN</td><td>vi</td><td>Dùng khi cần đọc nhanh tiếng Việt</td></tr>
+<tr><td>Dược điển Trung Quốc giản thể, cần QA thuật ngữ kỹ</td><td>all</td><td>chi_sim+eng</td><td>zh-CN</td><td>en</td><td>Tạo bản Anh trung gian để kiểm tra</td></tr>
+<tr><td>Dược điển Trung Quốc phồn thể</td><td>all</td><td>chi_tra+eng</td><td>zh-TW</td><td>vi</td><td>Dùng cho bản scan phồn thể</td></tr>
+<tr><td>PDF hỗn hợp text + scan</td><td>auto</td><td>chi_sim+eng hoặc chi_tra+eng</td><td>zh-CN hoặc zh-TW</td><td>vi hoặc en</td><td>Chạy thử trước vài file</td></tr>
+<tr><td>Bảng scan quan trọng cần đối chiếu kỹ</td><td>all</td><td>chi_sim+eng hoặc chi_tra+eng</td><td>đúng theo nguồn</td><td>en trước</td><td>Sau đó QA rồi hiệu đính Việt</td></tr>
+</table>
+<h2>11. Kết quả đầu ra người dùng nên kiểm tra</h2>
+<p>Sau khi chạy xong, người dùng nên xem các thành phần sau trong gói kết quả:</p>
+<ul>
+<li>Bản song ngữ để đối chiếu.</li>
+<li>Bản đích để đọc liên tục.</li>
+<li>File log để biết tài liệu nào lỗi segment.</li>
+<li>Các báo cáo QA nếu có.</li>
+</ul>
+<p>Nếu phát hiện một file bảng quá lỗi, nên quay lại chạy riêng file đó với cấu hình khác, thay vì chạy lại toàn bộ thư viện.</p>
+<h2>12. Kết luận</h2>
+<p>Với dược điển tiếng Trung dạng scan, điều quan trọng nhất không phải chỉ là bật dịch, mà là chọn đúng cấu hình OCR và đúng chiến lược đích.</p>
+<p>Tóm tắt khuyến nghị:</p>
+<ul>
+<li>Trung giản thể: `chi_sim+eng`, `zh-CN`.</li>
+<li>Trung phồn thể: `chi_tra+eng`, `zh-TW`.</li>
+<li>PDF scan thuần ảnh: ưu tiên `OCR Mode = all`.</li>
+<li>Cần đọc nhanh: dịch sang `vi`.</li>
+<li>Cần QA kỹ thuật ngữ: dịch sang `en` trước.</li>
+<li>Với bảng quan trọng: luôn kiểm tra lại trong Viewer.</li>
+</ul>
+<p>Nếu áp dụng đúng quy trình này, người dùng sẽ kiểm soát tốt hơn chất lượng bản dịch, đặc biệt với các bảng chỉ tiêu, chuyên luận và tài liệu dược điển có tính kỹ thuật cao.</p>
+<div class="footer">Tài liệu hướng dẫn tổng hợp dành cho người dùng Translator Docs Book v5 GUI và Translation Package Viewer v7.</div></div>
+</body>
+</html>

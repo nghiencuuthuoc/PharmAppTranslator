@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hướng dẫn cấu hình Translator Docs Book v5 GUI cho tài liệu tiếng Nhật</title>
+<style>
+@page { size: A4; margin: 24mm 20mm 24mm 20mm; }
+body {
+  font-family: "Noto Serif", "Noto Serif CJK SC", serif;
+  color: #1f2937;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 24px 56px;
+  line-height: 1.62;
+  font-size: 15px;
+  background: #ffffff;
+}
+h1, h2, h3 {
+  font-family: "Noto Sans", "Noto Sans CJK SC", sans-serif;
+  color: #0f172a;
+  line-height: 1.25;
+}
+h1 {
+  font-size: 28px;
+  border-bottom: 3px solid #1d4ed8;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 20px;
+  margin-top: 28px;
+  padding-top: 6px;
+}
+h3 {
+  font-size: 16px;
+  margin-top: 18px;
+}
+p, li { font-size: 15px; }
+code {
+  background: #eff6ff;
+  color: #1e3a8a;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 90%;
+}
+pre {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 14px 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+pre code { background: transparent; color: inherit; padding: 0; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0 22px;
+  font-size: 14px;
+}
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 10px;
+  vertical-align: top;
+}
+th {
+  background: #eaf2ff;
+  text-align: left;
+  font-family: "Noto Sans", "Noto Sans CJK SC", sans-serif;
+}
+blockquote {
+  margin: 16px 0;
+  padding: 10px 14px;
+  border-left: 4px solid #60a5fa;
+  background: #f8fbff;
+}
+hr {
+  border: 0;
+  border-top: 1px solid #dbe5f0;
+  margin: 28px 0 18px;
+}
+</style>
+</head>
+<body>
+<pre># Hướng dẫn cấu hình Translator Docs Book v5 GUI cho tài liệu tiếng Nhật
+
+**Mục đích:** giúp người dùng chọn đúng cấu hình khi dịch tài liệu **tiếng Nhật** trong **Translator Docs Book v5 GUI**, đặc biệt với các nhóm tài liệu như **Japanese Pharmacopoeia**, **SmPC**, **PIL**, **package insert**, tài liệu scan và tài liệu PDF text.
+
+## 1. Nguyên tắc chọn cấu hình cho tiếng Nhật
+
+Với tài liệu tiếng Nhật, cặp cấu hình chuẩn thường là:
+
+- **OCR Lang** = `jpn+eng`
+- **Source Lang** = `ja`
+- **Target Lang** = `vi` hoặc `en`
+
+Lý do:
+- Tài liệu Nhật thường có **chữ Nhật + thuật ngữ tiếng Anh**.
+- `jpn+eng` giúp OCR giữ tốt hơn phần chữ Latin, tên hoạt chất, đơn vị đo, tiêu đề kỹ thuật và tên Latin.
+- `ja` là mã nguồn phù hợp cho bước dịch nội dung tiếng Nhật.
+
+## 2. Cách chọn theo loại tài liệu
+
+| Loại tài liệu | OCR Mode | OCR Lang | Source Lang | Target Lang | Khuyến nghị |
+|---|---|---|---|---|---|
+| Dược điển Nhật dạng scan | `all` | `jpn+eng` | `ja` | `vi` hoặc `en` | Cấu hình nên dùng |
+| SmPC/PIL/package insert Nhật dạng scan | `all` | `jpn+eng` | `ja` | `vi` hoặc `en` | Cấu hình nên dùng |
+| PDF text, DOCX, HTML, EPUB tiếng Nhật | `off`, `auto` hoặc `text-only` | Có thể bỏ qua OCR hoặc vẫn để `jpn+eng` | `ja` | `vi` hoặc `en` | Ưu tiên không OCR nếu file có text thật |
+| Không chắc file là scan hay text | `all` | `jpn+eng` | `ja` | `vi` hoặc `en` | Chọn an toàn |
+| Tài liệu Nhật có nhiều tiếng Anh | `all` hoặc `auto` | `jpn+eng` | `ja` | `vi` hoặc `en` | Giữ tốt phần thuật ngữ Anh |
+
+## 3. Preset nên dùng ngay
+
+### Trường hợp 1: Dịch sang tiếng Việt
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = vi
+```
+
+### Trường hợp 2: Dịch sang tiếng Anh
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = en
+```
+
+### Trường hợp 3: File không scan, có thể copy được chữ
+```text
+OCR Mode    = off / auto / text-only
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = vi hoặc en
+```
+
+### Trường hợp 4: Không chắc file là scan hay không
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = vi hoặc en
+```
+
+## 4. Cách nhận biết file scan và file không scan
+
+### File scan
+Dấu hiệu thường gặp:
+- Không bôi đen hoặc copy được chữ trong PDF.
+- Khi phóng to, chữ có cảm giác là ảnh.
+- Trang nghiêng nhẹ, mờ, có nền xám, dấu chấm đen hoặc bóng quét.
+- Bảng biểu và ký tự bị dính nét như ảnh chụp.
+
+**Thiết lập nên dùng:**
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = vi hoặc en
+```
+
+### File không scan
+Dấu hiệu thường gặp:
+- Copy được chữ ra Notepad hoặc Word.
+- Tìm kiếm trong PDF ra đúng từ khóa.
+- Chữ sắc nét, phóng to không bị rỗ ảnh.
+
+**Thiết lập nên dùng:**
+```text
+OCR Mode    = off / auto / text-only
+Source Lang = ja
+Target Lang = vi hoặc en
+```
+
+## 5. Ứng dụng theo từng nhóm tài liệu
+
+### 5.1. Dược điển Nhật
+Ví dụ:
+- chuyên luận trong Japanese Pharmacopoeia
+- chuyên đề phép thử, định lượng, tạp chất, bảo quản
+
+Khuyến nghị:
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = vi
+```
+
+Nếu cần bản tiếng Anh:
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = en
+```
+
+### 5.2. SmPC, PIL, package insert tiếng Nhật
+Loại này thường có:
+- tên thuốc
+- thành phần
+- chỉ định
+- liều dùng
+- chống chỉ định
+- cảnh báo
+- ADR
+- bảo quản
+
+Nếu là scan:
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = vi hoặc en
+```
+
+Nếu là PDF text:
+```text
+OCR Mode    = off / auto
+Source Lang = ja
+Target Lang = vi hoặc en
+```
+
+### 5.3. Tài liệu hỗn hợp Nhật - Anh
+Nhiều tài liệu có:
+- tên hoạt chất bằng tiếng Anh
+- đơn vị mg, mL, %, pH
+- tiêu đề Latin hoặc English
+- bảng công thức, tên khoa học
+
+Khi đó vẫn nên chọn:
+```text
+OCR Lang = jpn+eng
+```
+
+## 6. Khi nào nên chọn `all`
+
+Nên chọn **`OCR Mode = all`** khi:
+- tài liệu là ảnh scan
+- PDF bị khóa text hoặc text lỗi
+- file vừa có trang scan vừa có trang text
+- tài liệu có bảng, chú thích, tiêu đề lẫn trong ảnh
+- bạn không chắc chất lượng text gốc có sạch hay không
+
+Trong thực tế, với **dược điển Nhật**, **SmPC/PIL scan**, chọn `all` thường an toàn hơn.
+
+## 7. Khi nào không cần OCR
+
+Không cần OCR khi:
+- file là PDF text chuẩn
+- DOCX, HTML, EPUB có text thật
+- có thể tìm kiếm và copy nội dung chính xác
+- muốn giảm thời gian xử lý và hạn chế lỗi OCR
+
+Thiết lập phù hợp:
+```text
+OCR Mode = off / auto / text-only
+```
+
+## 8. Lỗi chọn sai cấu hình thường gặp
+
+### 8.1. Chọn sai OCR Lang
+Ví dụ dùng `chi_sim+eng` hoặc `chi_tra+eng` cho tài liệu Nhật.
+
+Hậu quả:
+- OCR sai nhiều ký tự kana/kanji
+- từ chuyên ngành bị méo
+- tiêu đề và bảng biểu nhận dạng kém
+
+**Đúng:** với tiếng Nhật, ưu tiên `jpn+eng`.
+
+### 8.2. Chọn sai Source Lang
+Ví dụ tài liệu Nhật nhưng đặt `zh-CN` hoặc `zh-TW`.
+
+Hậu quả:
+- bản dịch không ổn định
+- câu dễ lệch nghĩa
+- tên mục và thuật ngữ y dược sai ngữ cảnh
+
+**Đúng:** đặt `Source Lang = ja`.
+
+### 8.3. File scan nhưng tắt OCR
+Hậu quả:
+- mất chữ
+- thiếu dòng
+- không trích xuất được nội dung thật
+
+**Đúng:** dùng `OCR Mode = all`.
+
+### 8.4. File text nhưng ép OCR toàn bộ
+Hậu quả:
+- chạy chậm hơn
+- đôi khi làm bẩn text đang vốn sạch
+
+**Đúng:** nếu chắc là PDF text thì dùng `off`, `auto` hoặc `text-only`.
+
+## 9. Cheat sheet dùng nhanh
+
+| Tình huống | Cấu hình nhanh |
+|---|---|
+| Dược điển Nhật scan | `all` + `jpn+eng` + `ja` + `vi/en` |
+| PIL/SmPC Nhật scan | `all` + `jpn+eng` + `ja` + `vi/en` |
+| PDF text tiếng Nhật | `off/auto` + `ja` + `vi/en` |
+| Không chắc file là scan | `all` + `jpn+eng` + `ja` + `vi/en` |
+| Nhật + nhiều tiếng Anh | `jpn+eng` + `ja` |
+
+## 10. Kết luận
+
+Với **tài liệu tiếng Nhật**, thiết lập chuẩn nên nhớ là:
+
+- **OCR Lang** = `jpn+eng`
+- **Source Lang** = `ja`
+
+Sau đó chọn theo tình trạng file:
+- **file scan** -&gt; **`OCR Mode = all`**
+- **file text thật** -&gt; **`OCR Mode = off/auto/text-only`**
+
+Nếu cần một cấu hình an toàn để dùng ngay cho phần lớn tài liệu dược điển, SmPC và PIL tiếng Nhật:
+
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = vi
+```
+
+Hoặc nếu muốn dịch sang tiếng Anh:
+
+```text
+OCR Mode    = all
+OCR Lang    = jpn+eng
+Source Lang = ja
+Target Lang = en
+```
+
+---
+
+**Gợi ý vận hành nhanh:**  
+Nếu bạn chưa chắc tài liệu là scan hay không, hãy chọn **`all + jpn+eng + ja`** trước. Đây là preset an toàn và phù hợp với đa số tài liệu tiếng Nhật trong thực tế.</pre>
+</body>
+</html>
