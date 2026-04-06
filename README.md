@@ -64,6 +64,16 @@ PharmAppTranslator_Release/
    └─ Tesseract5.5.0/
       ├─ tesseract.exe
       └─ tessdata/
+
+Or
+PharmAppTranslator_DualLang/
+├─ Apps/
+│  └─ Tesseract5.5.0/
+│     ├─ tesseract.exe
+│     └─ tessdata/
+└─ dist/
+   ├─ translator_docs_book_v8_5_gui.exe
+   └─ translator_docs_book_v8_5_gui.exe
 ```
 
 You may also publish separate ZIP files if preferred:
