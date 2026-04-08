@@ -1,0 +1,135 @@
+Bảng đối chiếu ký hiệu ngôn ngữ: deep_translator ↔ OCR/Tesseract
+
+Giao cắt các ngôn ngữ đang được GoogleTranslator trong deep_translator và Tesseract 4/5 hỗ trợ; ưu tiên EN, VI, JA, ZH-CN, ZH-TW, KO, FR, DE ở đầu bảng.
+
+GHI CHÚ PHƯƠNG PHÁP
+- Một số mã deep_translator lặp lại vì Tesseract có biến thể OCR riêng cho cùng một ngôn ngữ, ví dụ: aze/aze_cyrl, srp/srp_latn, uzb/uzb_cyrl, kor/kor_vert, deu/deu_latf.
+- Các dòng không phải ngôn ngữ hoặc mang tính mô-đun/phụ trợ như equ, osd đã loại bỏ khỏi bảng chính.
+- Các dòng lịch sử/không còn dùng làm ngôn ngữ chính như *_old, English Middle, Greek Ancient, French Middle, German Fraktur cũ (frk) đã loại bỏ khỏi bảng chính; riêng deu_latf được giữ vì vẫn được nêu như một mã OCR hiện hành trong tài liệu Tesseract.
+- “G20” không phải là mã ngôn ngữ; trong bảng này hàng ưu tiên đầu bảng được hiểu là English, Vietnamese, Japanese, Chinese (Simplified), Chinese (Traditional), Korean, French, German.
+
+ STT  deep_translator     OCR/Tesseract     
+------------------------------------------------
+   1  en                  eng               
+   2  vi                  vie               
+   3  ja                  jpn               
+   4  zh-CN               chi_sim           
+   5  zh-TW               chi_tra           
+   6  ko                  kor               
+   7  fr                  fra               
+   8  de                  deu               
+   9  af                  afr               
+  10  am                  amh               
+  11  ar                  ara               
+  12  as                  asm               
+  13  az                  aze               
+  14  az                  aze_cyrl          
+  15  be                  bel               
+  16  bg                  bul               
+  17  bn                  ben               
+  18  bs                  bos               
+  19  ca                  cat               
+  20  ceb                 ceb               
+  21  co                  cos               
+  22  cs                  ces               
+  23  cy                  cym               
+  24  da                  dan               
+  25  de                  deu_latf          
+  26  el                  ell               
+  27  eo                  epo               
+  28  es                  spa               
+  29  et                  est               
+  30  eu                  eus               
+  31  fa                  fas               
+  32  fi                  fin               
+  33  fy                  fry               
+  34  ga                  gle               
+  35  gd                  gla               
+  36  gl                  glg               
+  37  gu                  guj               
+  38  hi                  hin               
+  39  hr                  hrv               
+  40  ht                  hat               
+  41  hu                  hun               
+  42  hy                  hye               
+  43  id                  ind               
+  44  is                  isl               
+  45  it                  ita               
+  46  iw                  heb               
+  47  jw                  jav               
+  48  ka                  kat               
+  49  kk                  kaz               
+  50  km                  khm               
+  51  kn                  kan               
+  52  ko                  kor_vert          
+  53  ku                  kmr               
+  54  ky                  kir               
+  55  la                  lat               
+  56  lb                  ltz               
+  57  lo                  lao               
+  58  lt                  lit               
+  59  lv                  lav               
+  60  mi                  mri               
+  61  mk                  mkd               
+  62  ml                  mal               
+  63  mn                  mon               
+  64  mr                  mar               
+  65  ms                  msa               
+  66  mt                  mlt               
+  67  my                  mya               
+  68  ne                  nep               
+  69  nl                  nld               
+  70  no                  nor               
+  71  or                  ori               
+  72  pa                  pan               
+  73  pl                  pol               
+  74  ps                  pus               
+  75  pt                  por               
+  76  qu                  que               
+  77  ro                  ron               
+  78  ru                  rus               
+  79  sa                  san               
+  80  sd                  snd               
+  81  si                  sin               
+  82  sk                  slk               
+  83  sl                  slv               
+  84  sq                  sqi               
+  85  sr                  srp               
+  86  sr                  srp_latn          
+  87  su                  sun               
+  88  sv                  swe               
+  89  sw                  swa               
+  90  ta                  tam               
+  91  te                  tel               
+  92  tg                  tgk               
+  93  th                  tha               
+  94  ti                  tir               
+  95  tl                  fil               
+  96  tr                  tur               
+  97  tt                  tat               
+  98  ug                  uig               
+  99  uk                  ukr               
+ 100  ur                  urd               
+ 101  uz                  uzb               
+ 102  uz                  uzb_cyrl          
+ 103  yi                  yid               
+ 104  yo                  yor               
+
+BIẾN THỂ OCR CẦN LƯU Ý
+- aze_cyrl -> az (Azerbaijani - Cyrillic)
+- deu_latf -> de (German (Fraktur Latin))
+- kor_vert -> ko (Korean (vertical))
+- srp_latn -> sr (Serbian - Latin)
+- uzb_cyrl -> uz (Uzbek - Cyrillic)
+
+TÀI LIỆU THAM KHẢO
+[1] deep-translator documentation, “Usage / Check Supported Languages”. https://deep-translator.readthedocs.io/en/latest/usage.html
+[2] nidhaloff/deep-translator, deep_translator/constants.py (GOOGLE_LANGUAGES_TO_CODES). https://raw.githubusercontent.com/nidhaloff/deep-translator/master/deep_translator/constants.py
+[3] Tesseract documentation, “Languages/Scripts supported in different versions of Tesseract”. https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html
+[4] Tesseract OCR README (100+ languages out of the box). https://raw.githubusercontent.com/tesseract-ocr/tesseract/main/README.md
+
+Cập nhật biên soạn: 2026-04-08
+
+----------------------------------------------------------------------------------------------------
+© 2009-2026 • Pharma R&D Platforms • PharmApp • Discover • Design • Develop • Validate • Deliver • www.nghiencuuthuoc.com • Zalo:
++84888999311 • www.pharmapp.dev

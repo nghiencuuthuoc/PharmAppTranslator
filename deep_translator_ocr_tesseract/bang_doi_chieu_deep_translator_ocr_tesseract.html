@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bảng đối chiếu ký hiệu ngôn ngữ: deep_translator ↔ OCR/Tesseract</title>
+<style>
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #1f2937; background: #f7fafc; }
+.container { max-width: 980px; margin: 0 auto; background: white; padding: 34px 42px 28px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+h1 { margin: 0 0 8px; font-size: 28px; color: #0f172a; }
+.subtitle { font-size: 14px; color: #475569; margin-bottom: 20px; line-height: 1.5; }
+.section-title { margin: 24px 0 8px; font-size: 18px; color: #0f172a; border-left: 4px solid #2563eb; padding-left: 10px; }
+.note-box { background: #f8fbff; border: 1px solid #dbeafe; border-radius: 8px; padding: 14px 16px; }
+.note-box ul { margin: 0; padding-left: 20px; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+thead th { background: #eff6ff; color: #0f172a; text-align: left; border: 1px solid #cbd5e1; padding: 8px 10px; position: sticky; top: 0; }
+tbody td { border: 1px solid #e2e8f0; padding: 7px 10px; }
+tbody tr:nth-child(even) { background: #fafcff; }
+code { font-family: Consolas, Menlo, monospace; background: #f1f5f9; padding: 1px 4px; border-radius: 4px; }
+.footer { border-top: 1px solid #94a3b8; margin-top: 26px; padding-top: 10px; font-size: 12px; color: #475569; white-space: pre-line; }
+a { color: #1d4ed8; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Bảng đối chiếu ký hiệu ngôn ngữ: deep_translator ↔ OCR/Tesseract</h1>
+  <div class="subtitle">Giao cắt các ngôn ngữ đang được GoogleTranslator trong deep_translator và Tesseract 4/5 hỗ trợ; ưu tiên EN, VI, JA, ZH-CN, ZH-TW, KO, FR, DE ở đầu bảng.</div>
+  <div class="section-title">Ghi chú phương pháp</div>
+  <div class="note-box"><ul><li>Một số mã deep_translator lặp lại vì Tesseract có biến thể OCR riêng cho cùng một ngôn ngữ, ví dụ: aze/aze_cyrl, srp/srp_latn, uzb/uzb_cyrl, kor/kor_vert, deu/deu_latf.</li><li>Các dòng không phải ngôn ngữ hoặc mang tính mô-đun/phụ trợ như equ, osd đã loại bỏ khỏi bảng chính.</li><li>Các dòng lịch sử/không còn dùng làm ngôn ngữ chính như *_old, English Middle, Greek Ancient, French Middle, German Fraktur cũ (frk) đã loại bỏ khỏi bảng chính; riêng deu_latf được giữ vì vẫn được nêu như một mã OCR hiện hành trong tài liệu Tesseract.</li><li>“G20” không phải là mã ngôn ngữ; trong bảng này hàng ưu tiên đầu bảng được hiểu là English, Vietnamese, Japanese, Chinese (Simplified), Chinese (Traditional), Korean, French, German.</li></ul></div>
+  <div class="section-title">Bảng chính</div>
+  <table>
+    <thead><tr><th style="width: 10%">STT</th><th style="width: 35%">Ký hiệu deep_translator</th><th style="width: 55%">Ký hiệu OCR/Tesseract</th></tr></thead>
+    <tbody><tr><td>1</td><td><code>en</code></td><td><code>eng</code></td></tr>
+<tr><td>2</td><td><code>vi</code></td><td><code>vie</code></td></tr>
+<tr><td>3</td><td><code>ja</code></td><td><code>jpn</code></td></tr>
+<tr><td>4</td><td><code>zh-CN</code></td><td><code>chi_sim</code></td></tr>
+<tr><td>5</td><td><code>zh-TW</code></td><td><code>chi_tra</code></td></tr>
+<tr><td>6</td><td><code>ko</code></td><td><code>kor</code></td></tr>
+<tr><td>7</td><td><code>fr</code></td><td><code>fra</code></td></tr>
+<tr><td>8</td><td><code>de</code></td><td><code>deu</code></td></tr>
+<tr><td>9</td><td><code>af</code></td><td><code>afr</code></td></tr>
+<tr><td>10</td><td><code>am</code></td><td><code>amh</code></td></tr>
+<tr><td>11</td><td><code>ar</code></td><td><code>ara</code></td></tr>
+<tr><td>12</td><td><code>as</code></td><td><code>asm</code></td></tr>
+<tr><td>13</td><td><code>az</code></td><td><code>aze</code></td></tr>
+<tr><td>14</td><td><code>az</code></td><td><code>aze_cyrl</code></td></tr>
+<tr><td>15</td><td><code>be</code></td><td><code>bel</code></td></tr>
+<tr><td>16</td><td><code>bg</code></td><td><code>bul</code></td></tr>
+<tr><td>17</td><td><code>bn</code></td><td><code>ben</code></td></tr>
+<tr><td>18</td><td><code>bs</code></td><td><code>bos</code></td></tr>
+<tr><td>19</td><td><code>ca</code></td><td><code>cat</code></td></tr>
+<tr><td>20</td><td><code>ceb</code></td><td><code>ceb</code></td></tr>
+<tr><td>21</td><td><code>co</code></td><td><code>cos</code></td></tr>
+<tr><td>22</td><td><code>cs</code></td><td><code>ces</code></td></tr>
+<tr><td>23</td><td><code>cy</code></td><td><code>cym</code></td></tr>
+<tr><td>24</td><td><code>da</code></td><td><code>dan</code></td></tr>
+<tr><td>25</td><td><code>de</code></td><td><code>deu_latf</code></td></tr>
+<tr><td>26</td><td><code>el</code></td><td><code>ell</code></td></tr>
+<tr><td>27</td><td><code>eo</code></td><td><code>epo</code></td></tr>
+<tr><td>28</td><td><code>es</code></td><td><code>spa</code></td></tr>
+<tr><td>29</td><td><code>et</code></td><td><code>est</code></td></tr>
+<tr><td>30</td><td><code>eu</code></td><td><code>eus</code></td></tr>
+<tr><td>31</td><td><code>fa</code></td><td><code>fas</code></td></tr>
+<tr><td>32</td><td><code>fi</code></td><td><code>fin</code></td></tr>
+<tr><td>33</td><td><code>fy</code></td><td><code>fry</code></td></tr>
+<tr><td>34</td><td><code>ga</code></td><td><code>gle</code></td></tr>
+<tr><td>35</td><td><code>gd</code></td><td><code>gla</code></td></tr>
+<tr><td>36</td><td><code>gl</code></td><td><code>glg</code></td></tr>
+<tr><td>37</td><td><code>gu</code></td><td><code>guj</code></td></tr>
+<tr><td>38</td><td><code>hi</code></td><td><code>hin</code></td></tr>
+<tr><td>39</td><td><code>hr</code></td><td><code>hrv</code></td></tr>
+<tr><td>40</td><td><code>ht</code></td><td><code>hat</code></td></tr>
+<tr><td>41</td><td><code>hu</code></td><td><code>hun</code></td></tr>
+<tr><td>42</td><td><code>hy</code></td><td><code>hye</code></td></tr>
+<tr><td>43</td><td><code>id</code></td><td><code>ind</code></td></tr>
+<tr><td>44</td><td><code>is</code></td><td><code>isl</code></td></tr>
+<tr><td>45</td><td><code>it</code></td><td><code>ita</code></td></tr>
+<tr><td>46</td><td><code>iw</code></td><td><code>heb</code></td></tr>
+<tr><td>47</td><td><code>jw</code></td><td><code>jav</code></td></tr>
+<tr><td>48</td><td><code>ka</code></td><td><code>kat</code></td></tr>
+<tr><td>49</td><td><code>kk</code></td><td><code>kaz</code></td></tr>
+<tr><td>50</td><td><code>km</code></td><td><code>khm</code></td></tr>
+<tr><td>51</td><td><code>kn</code></td><td><code>kan</code></td></tr>
+<tr><td>52</td><td><code>ko</code></td><td><code>kor_vert</code></td></tr>
+<tr><td>53</td><td><code>ku</code></td><td><code>kmr</code></td></tr>
+<tr><td>54</td><td><code>ky</code></td><td><code>kir</code></td></tr>
+<tr><td>55</td><td><code>la</code></td><td><code>lat</code></td></tr>
+<tr><td>56</td><td><code>lb</code></td><td><code>ltz</code></td></tr>
+<tr><td>57</td><td><code>lo</code></td><td><code>lao</code></td></tr>
+<tr><td>58</td><td><code>lt</code></td><td><code>lit</code></td></tr>
+<tr><td>59</td><td><code>lv</code></td><td><code>lav</code></td></tr>
+<tr><td>60</td><td><code>mi</code></td><td><code>mri</code></td></tr>
+<tr><td>61</td><td><code>mk</code></td><td><code>mkd</code></td></tr>
+<tr><td>62</td><td><code>ml</code></td><td><code>mal</code></td></tr>
+<tr><td>63</td><td><code>mn</code></td><td><code>mon</code></td></tr>
+<tr><td>64</td><td><code>mr</code></td><td><code>mar</code></td></tr>
+<tr><td>65</td><td><code>ms</code></td><td><code>msa</code></td></tr>
+<tr><td>66</td><td><code>mt</code></td><td><code>mlt</code></td></tr>
+<tr><td>67</td><td><code>my</code></td><td><code>mya</code></td></tr>
+<tr><td>68</td><td><code>ne</code></td><td><code>nep</code></td></tr>
+<tr><td>69</td><td><code>nl</code></td><td><code>nld</code></td></tr>
+<tr><td>70</td><td><code>no</code></td><td><code>nor</code></td></tr>
+<tr><td>71</td><td><code>or</code></td><td><code>ori</code></td></tr>
+<tr><td>72</td><td><code>pa</code></td><td><code>pan</code></td></tr>
+<tr><td>73</td><td><code>pl</code></td><td><code>pol</code></td></tr>
+<tr><td>74</td><td><code>ps</code></td><td><code>pus</code></td></tr>
+<tr><td>75</td><td><code>pt</code></td><td><code>por</code></td></tr>
+<tr><td>76</td><td><code>qu</code></td><td><code>que</code></td></tr>
+<tr><td>77</td><td><code>ro</code></td><td><code>ron</code></td></tr>
+<tr><td>78</td><td><code>ru</code></td><td><code>rus</code></td></tr>
+<tr><td>79</td><td><code>sa</code></td><td><code>san</code></td></tr>
+<tr><td>80</td><td><code>sd</code></td><td><code>snd</code></td></tr>
+<tr><td>81</td><td><code>si</code></td><td><code>sin</code></td></tr>
+<tr><td>82</td><td><code>sk</code></td><td><code>slk</code></td></tr>
+<tr><td>83</td><td><code>sl</code></td><td><code>slv</code></td></tr>
+<tr><td>84</td><td><code>sq</code></td><td><code>sqi</code></td></tr>
+<tr><td>85</td><td><code>sr</code></td><td><code>srp</code></td></tr>
+<tr><td>86</td><td><code>sr</code></td><td><code>srp_latn</code></td></tr>
+<tr><td>87</td><td><code>su</code></td><td><code>sun</code></td></tr>
+<tr><td>88</td><td><code>sv</code></td><td><code>swe</code></td></tr>
+<tr><td>89</td><td><code>sw</code></td><td><code>swa</code></td></tr>
+<tr><td>90</td><td><code>ta</code></td><td><code>tam</code></td></tr>
+<tr><td>91</td><td><code>te</code></td><td><code>tel</code></td></tr>
+<tr><td>92</td><td><code>tg</code></td><td><code>tgk</code></td></tr>
+<tr><td>93</td><td><code>th</code></td><td><code>tha</code></td></tr>
+<tr><td>94</td><td><code>ti</code></td><td><code>tir</code></td></tr>
+<tr><td>95</td><td><code>tl</code></td><td><code>fil</code></td></tr>
+<tr><td>96</td><td><code>tr</code></td><td><code>tur</code></td></tr>
+<tr><td>97</td><td><code>tt</code></td><td><code>tat</code></td></tr>
+<tr><td>98</td><td><code>ug</code></td><td><code>uig</code></td></tr>
+<tr><td>99</td><td><code>uk</code></td><td><code>ukr</code></td></tr>
+<tr><td>100</td><td><code>ur</code></td><td><code>urd</code></td></tr>
+<tr><td>101</td><td><code>uz</code></td><td><code>uzb</code></td></tr>
+<tr><td>102</td><td><code>uz</code></td><td><code>uzb_cyrl</code></td></tr>
+<tr><td>103</td><td><code>yi</code></td><td><code>yid</code></td></tr>
+<tr><td>104</td><td><code>yo</code></td><td><code>yor</code></td></tr></tbody>
+  </table>
+  <div class="section-title">Biến thể OCR cần lưu ý</div>
+  <ul><li><code>aze_cyrl</code> → <code>az</code> (Azerbaijani - Cyrillic)</li><li><code>deu_latf</code> → <code>de</code> (German (Fraktur Latin))</li><li><code>kor_vert</code> → <code>ko</code> (Korean (vertical))</li><li><code>srp_latn</code> → <code>sr</code> (Serbian - Latin)</li><li><code>uzb_cyrl</code> → <code>uz</code> (Uzbek - Cyrillic)</li></ul>
+  <div class="section-title">Tài liệu tham khảo</div>
+  <ol><li><strong>[1]</strong> deep-translator documentation, “Usage / Check Supported Languages”. <a href="https://deep-translator.readthedocs.io/en/latest/usage.html">https://deep-translator.readthedocs.io/en/latest/usage.html</a></li><li><strong>[2]</strong> nidhaloff/deep-translator, deep_translator/constants.py (GOOGLE_LANGUAGES_TO_CODES). <a href="https://raw.githubusercontent.com/nidhaloff/deep-translator/master/deep_translator/constants.py">https://raw.githubusercontent.com/nidhaloff/deep-translator/master/deep_translator/constants.py</a></li><li><strong>[3]</strong> Tesseract documentation, “Languages/Scripts supported in different versions of Tesseract”. <a href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html</a></li><li><strong>[4]</strong> Tesseract OCR README (100+ languages out of the box). <a href="https://raw.githubusercontent.com/tesseract-ocr/tesseract/main/README.md">https://raw.githubusercontent.com/tesseract-ocr/tesseract/main/README.md</a></li></ol>
+  <p><em>Cập nhật biên soạn: 2026-04-08</em></p>
+  <div class="footer">© 2009-2026 • Pharma R&amp;D Platforms • PharmApp • Discover • Design • Develop • Validate • Deliver • www.nghiencuuthuoc.com • Zalo:
++84888999311 • www.pharmapp.dev</div>
+</div>
+</body>
+</html>
